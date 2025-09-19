@@ -1046,9 +1046,9 @@ body {
 }
 
 .cta-btn.shop {
-  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  background: linear-gradient(135deg, #FF1493, #FF69B4);
   color: white;
-  border: 2px solid #FF6B35;
+  border: 2px solid #FF1493;
   text-decoration: none;
   font-weight: 600;
   position: relative;
@@ -1056,15 +1056,15 @@ body {
 }
 
 .cta-btn.shop:hover {
-  background: linear-gradient(135deg, #FF8A65, #FFB74D);
-  border-color: #FFB74D;
+  background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+  border-color: #FF69B4;
   box-shadow:
-    0 8px 25px rgba(255, 107, 53, 0.4),
-    0 0 30px rgba(255, 107, 53, 0.3);
+    0 8px 25px rgba(255, 20, 147, 0.4),
+    0 0 30px rgba(255, 20, 147, 0.3);
 }
 
 .cta-btn.shop .btn-glow {
-  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  background: linear-gradient(135deg, #FF1493, #FF69B4);
 }
 
 .cta-btn:hover {
@@ -1222,7 +1222,7 @@ body {
 
 .buy-btn {
   display: inline-block;
-  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  background: linear-gradient(135deg, #FF1493, #FF69B4);
   color: white;
   text-decoration: none;
   border: none;
@@ -1234,7 +1234,7 @@ body {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
   width: 100%;
   text-align: center;
 }
@@ -1246,8 +1246,8 @@ body {
 
 .buy-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
-  background: linear-gradient(135deg, #FF8A65, #FFB74D);
+  box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
+  background: linear-gradient(135deg, #FF69B4, #FFB6C1);
 }
 
 .buy-btn.primary:hover {
@@ -2736,15 +2736,17 @@ body {
 
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
 }
 
 .social-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  padding: 1rem;
+  text-align: center;
+  gap: 0.4rem;
+  padding: 0.75rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
@@ -2762,8 +2764,21 @@ body {
 }
 
 .social-icon {
-  font-size: 1.5rem;
-  filter: drop-shadow(0 0 5px var(--glow-color));
+  margin-bottom: 0.5rem;
+}
+
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--glow-color);
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover .social-icon svg {
+  color: white;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px var(--glow-color));
 }
 
 .social-text {
@@ -2872,7 +2887,8 @@ body {
   }
 
   .social-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
 
   .form-group input,

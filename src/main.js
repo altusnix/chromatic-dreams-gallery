@@ -44,11 +44,24 @@ class DreamsMeowGallery {
 
       // Add click handler to show image in gallery
       cell.addEventListener('click', () => {
+        // Extract filename from path
+        const filename = imagePath.split('/').pop();
+
         // Find the image in our projects and open it
         for (const project of this.projects) {
-          const foundImage = project.images.find(img => imagePath.includes(img.filename));
+          const foundImage = project.images.find(img => img.filename === filename);
           if (foundImage) {
-            this.openImmersiveView(foundImage, project.images);
+            // Create proper artwork object for the immersive view
+            const artwork = {
+              ...foundImage,
+              projectId: project.id,
+              projectTitle: project.title,
+              series: project.title,
+              medium: project.medium,
+              imageUrl: `/art-portfolio/${project.id}/${foundImage.filename}`,
+              colorCategory: project.colorCategory
+            };
+            this.openImmersiveView(artwork);
             break;
           }
         }
