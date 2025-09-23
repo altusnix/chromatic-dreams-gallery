@@ -89,9 +89,9 @@ body {
 }
 
 .home-btn:hover {
-  transform: scale(1.1) rotate(-10deg);
-  background: rgb(255 255 255 / 60%);
-  box-shadow: 0 10px 30px var(--glow-color);
+  transform: translateY(-3px) scale(1.05);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .home-logo {
@@ -182,8 +182,8 @@ body {
 }
 
 .project-nav-btn:hover {
-  transform: translateY(-3px) scale(var(--hover-scale));
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .project-nav-btn[data-project="glass"] {
@@ -347,7 +347,7 @@ body {
 }
 
 .art-description {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   opacity: 0.8;
   margin-bottom: 0.75rem;
   line-height: 1.4;
@@ -361,8 +361,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.25rem;
-  font-size: 0.8rem;
+  margin-bottom: 0.15rem;
+  font-size: 0.65rem;
 }
 
 .metadata-label {
@@ -375,6 +375,71 @@ body {
   font-weight: 400;
   text-align: right;
   color: var(--text-primary);
+}
+
+/* === PURCHASE BUTTONS === */
+.art-actions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.purchase-btn, .slideshow-purchase-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, var(--accent-color), hsl(var(--accent-hue), 80%, 70%));
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.purchase-btn:hover, .slideshow-purchase-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.purchase-btn:active, .slideshow-purchase-btn:active {
+  transform: translateY(0);
+}
+
+.purchase-btn .btn-glow, .slideshow-purchase-btn .btn-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.purchase-btn:hover .btn-glow, .slideshow-purchase-btn:hover .btn-glow {
+  opacity: 1;
+}
+
+.slideshow-actions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slideshow-purchase-btn {
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 .art-colors {
@@ -422,9 +487,9 @@ body {
 }
 
 .control-btn:hover {
-  transform: scale(1.1) rotate(10deg);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px var(--glow-color);
+  transform: translateY(-3px) scale(1.05);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* === IMMERSIVE MODAL === */
@@ -483,7 +548,8 @@ body {
 
 .close-btn:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* === RESPONSIVE DESIGN === */
@@ -1090,6 +1156,10 @@ body {
   left: 100%;
 }
 
+.cta-btn.shop:hover .btn-glow {
+  left: -100%;
+}
+
 /* === WHERE TO BUY SECTION === */
 .where-to-buy-section {
   padding: 8rem 4rem;
@@ -1128,6 +1198,9 @@ body {
   opacity: 0;
   transform: translateY(50px);
   animation: slideInUp 0.8s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .buy-option-icon {
@@ -1202,6 +1275,7 @@ body {
 
 .option-features {
   margin-bottom: 2rem;
+  flex-grow: 1;
 }
 
 .feature {
@@ -1245,8 +1319,8 @@ body {
 }
 
 .buy-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   background: linear-gradient(135deg, #FF69B4, #FFB6C1);
 }
 
@@ -1295,8 +1369,8 @@ body {
 }
 
 .contact-artist-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(var(--accent-hue), 100%, 70%, 0.5);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   background: linear-gradient(45deg, var(--glow-color), var(--accent-color));
 }
 
@@ -1317,14 +1391,15 @@ body {
   color: var(--text-secondary);
   margin-bottom: 4rem;
   opacity: 0.8;
+  text-align: center;
 }
 
 /* === BANNER SLIDER === */
 .banner-slider {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 500px;
-  margin: 4rem 0;
+  margin: 3rem auto;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -1383,6 +1458,7 @@ body {
 .slide-content {
   max-width: 600px;
   color: white;
+  margin: 0 auto;
 }
 
 .slide-title {
@@ -1403,13 +1479,15 @@ body {
 }
 
 .slide-medium {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  display: block;
+  /* background: rgba(255, 255, 255, 0.2); */
+  padding: 0.5rem 1rem .75rem;
+  border-radius: 20px 20px 0 0;
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
   backdrop-filter: blur(10px);
+  width: 140px;
+  margin: -7px auto 0;
 }
 
 .slide-btn {
@@ -1425,8 +1503,8 @@ body {
 }
 
 .slide-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Slider Navigation */
@@ -1460,7 +1538,8 @@ body {
 
 .slider-btn:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Slider Dots */
@@ -1634,10 +1713,6 @@ body {
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 3rem;
-}
-
-/* Artistic Mediums - Colorful Tag Cloud Design */
-.artistic-mediums {
   margin-top: 2rem;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.05);
@@ -1646,11 +1721,23 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Artistic Mediums - Colorful Tag Cloud Design */
+.artistic-mediums {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: none;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 0;
+}
+
 .artistic-mediums h3 {
   font-size: 1.2rem;
   margin-bottom: 1.2rem;
-  color: var(--text-primary);
+  color: hsl(280deg 10.82% 45.92%);
   text-align: center;
+  text-shadow: 3px 1px 9px #333333;
+  text-transform: uppercase;
 }
 
 .tag-cloud {
@@ -1666,7 +1753,6 @@ body {
   display: inline-block;
   font-weight: 500;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  cursor: pointer;
   position: relative;
 }
 
@@ -1882,21 +1968,6 @@ body {
     0 15px 60px rgba(0, 0, 0, 0.6);
 }
 
-.photo-frame {
-  position: absolute;
-  top: -5px;
-  left: 105px;
-  right: -5px;
-  bottom: -5px;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  background: linear-gradient(45deg, var(--accent-color), var(--glow-color), var(--accent-color));
-  background-size: 400% 400%;
-  animation: gradientShift 3s ease infinite;
-  z-index: -1;
-  opacity: 0.3;
-  width: 61%;
-}
 
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
@@ -2047,6 +2118,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  user-select: none;
 }
 
 .exhibition-card:hover {
@@ -2054,7 +2126,9 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   border-color: var(--glow-color);
   background: linear-gradient(135deg, var(--glow-color)15, rgba(255, 255, 255, 0.08));
+  cursor: pointer;
 }
+
 
 .exhibition-date {
   color: var(--glow-color);
@@ -2323,6 +2397,18 @@ body {
   background: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.pub-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pub-link:hover {
+  color: inherit;
 }
 
 .pub-date {
@@ -2617,8 +2703,8 @@ body {
 }
 
 .submit-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 20px 40px var(--glow-color)40;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .submit-btn:active {
@@ -2675,15 +2761,7 @@ body {
   transition: opacity 0.3s;
 }
 
-.contact-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--glow-color)50;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
 
-.contact-card:hover::before {
-  opacity: 1;
-}
 
 .contact-icon {
   width: 2.5rem;
@@ -2703,11 +2781,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.contact-card:hover .contact-icon svg {
-  stroke: var(--accent-color);
-  filter: drop-shadow(0 0 12px var(--accent-color));
-  transform: scale(1.1);
-}
 
 .contact-card h3 {
   font-size: 1.2rem;
@@ -2929,7 +3002,7 @@ body {
 
 .slideshow-container {
   position: relative;
-  width: 90vw;
+  width: 80vw;
   max-width: 1200px;
   height: 90vh;
   display: grid;
@@ -2949,7 +3022,7 @@ body {
 
 .slideshow-image {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 60%;
   object-fit: contain;
   border-radius: 15px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -2963,6 +3036,7 @@ body {
 .slideshow-image.active {
   opacity: 1;
 }
+
 
 .slideshow-info {
   padding: 2rem;
@@ -3017,7 +3091,8 @@ body {
   display: flex;
   justify-content: space-between;
   pointer-events: none;
-  padding: 0 2rem;
+  padding: 0;
+  margin: 0 -5%;
 }
 
 .slideshow-btn {
@@ -3039,7 +3114,8 @@ body {
 
 .slideshow-btn:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .close-btn {
@@ -3061,7 +3137,8 @@ body {
 
 .close-btn:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* === RESPONSIVE SLIDESHOW === */

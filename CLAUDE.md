@@ -40,7 +40,10 @@ art-portfolio/
 ├── glass/               # Glass art and installations
 ├── wire-wraps/          # Wire jewelry and sculptures
 ├── photography/         # Fine art photography
-└── mixed-projects/      # Experimental mixed media
+├── nature/              # Nature photography
+├── light-paintings/     # Light painting photography
+├── me/                  # Self portraits
+└── paintings/           # Traditional paintings
 ```
 
 Images are referenced by filename in the `projects` array within `loadProjects()`. To add new artworks:

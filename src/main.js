@@ -160,21 +160,23 @@ class DreamsMeowGallery {
         medium: 'Glass Sculpture',
         colorCategory: 'blue',
         images: [
-          { filename: 'glass_000.jpeg', title: 'Crystal Refraction', description: 'Light dancing through transparent forms', size: '8" x 6" x 4"', year: '2024' },
-          { filename: 'glass_001.jpg', title: 'Luminous Depths', description: 'Exploring the interplay of light and shadow', size: '10" x 8" x 6"', year: '2024' },
-          { filename: 'glass_002.jpg', title: 'Fractured Light', description: 'Breaking light into spectrum components', size: '12" x 10" x 8"', year: '2024' },
-          { filename: 'glass_003.jpg', title: 'Crystalline Dreams', description: 'Dreams captured in crystal formations', size: '6" x 6" x 6"', year: '2024' },
-          { filename: 'glass_004.jpg', title: 'Transparent Visions', description: 'Visions through translucent medium', size: '14" x 12" x 10"', year: '2024' },
-          { filename: 'glass_005.jpg', title: 'Prism Portal', description: 'Gateway through prismatic glass', size: '16" x 14" x 12"', year: '2024' },
-          { filename: 'glass_006.jpg', title: 'Light Captured', description: 'Capturing light in solid form', size: '8" x 8" x 8"', year: '2024' },
-          { filename: 'glass_007.jpg', title: 'Crystal Cascade', description: 'Flowing forms in crystalline structure', size: '18" x 16" x 14"', year: '2024' },
-          { filename: 'glass_010.jpeg', title: 'Illuminated Geometry', description: 'Geometric patterns in illuminated glass', size: '10" x 10" x 10"', year: '2024' },
-          { filename: 'glass_011.jpeg', title: 'Spectral Formation', description: 'Formation through spectral analysis', size: '12" x 12" x 12"', year: '2024' },
-          { filename: 'glass_017.jpeg', title: 'Radiant Structure', description: 'Structural beauty through radiant light', size: '20" x 18" x 16"', year: '2024' },
-          { filename: 'glass_019.jpeg', title: 'Crystal Matrix', description: 'Complex crystalline matrix formations', size: '14" x 12" x 10"', year: '2024' },
-          { filename: 'glass_020.jpeg', title: 'Ethereal Transparency', description: 'Ethereal qualities of transparent materials', size: '16" x 14" x 12"', year: '2024' },
-          { filename: 'glass_021.jpeg', title: 'Light Symphony', description: 'Symphony of light through glass', size: '18" x 16" x 14"', year: '2024' },
-          { filename: 'glass_022.jpeg', title: 'Prismatic Dreams', description: 'Dreams expressed through prismatic forms', size: '12" x 10" x 8"', year: '2024' }
+          { filename: 'hands3.jpeg', title: 'Crystal Refraction', description: 'Light dancing through transparent forms', size: '8" x 6" x 4"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_001.jpg', title: 'Luminous Depths', description: 'Exploring the interplay of light and shadow', size: '10" x 8" x 6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_002.jpg', title: 'Fractured Light', description: 'Breaking light into spectrum components', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_003.jpg', title: 'Crystalline Dreams', description: 'Dreams captured in crystal formations', size: '6" x 6" x 6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_004.jpg', title: 'Transparent Visions', description: 'Visions through translucent medium', size: '14" x 12" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_005.jpg', title: 'Prism Portal', description: 'Gateway through prismatic glass', size: '16" x 14" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_006.jpg', title: 'Light Captured', description: 'Capturing light in solid form', size: '8" x 8" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_007.jpg', title: 'Crystal Cascade', description: 'Flowing forms in crystalline structure', size: '18" x 16" x 14"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_010.jpeg', title: 'Illuminated Geometry', description: 'Geometric patterns in illuminated glass', size: '10" x 10" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_011.jpeg', title: 'Spectral Formation', description: 'Formation through spectral analysis', size: '12" x 12" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_017.jpeg', title: 'Radiant Structure', description: 'Structural beauty through radiant light', size: '20" x 18" x 16"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wireglass_009.jpeg', title: 'Crystal Matrix', description: 'Complex crystalline matrix formations', size: '14" x 12" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wireglass_012.jpeg', title: 'Ethereal Transparency', description: 'Ethereal qualities of transparent materials', size: '16" x 14" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wireglass_013.jpeg', title: 'Light Symphony', description: 'Symphony of light through glass', size: '18" x 16" x 14"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'hands1.jpeg', title: 'Prismatic Dreams', description: 'Dreams expressed through prismatic forms', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'hands2.jpeg', title: 'Crystalline Touch', description: 'Hands interacting with crystalline formations', size: '10" x 8" x 6"', year: '2024', purchaseUrl: '' },
+          { filename: 'glass_000.jpeg', title: 'Glass Harmony', description: 'Human touch bringing harmony to glass art', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -184,18 +186,16 @@ class DreamsMeowGallery {
         medium: 'Wire & Stone',
         colorCategory: 'purple',
         images: [
-          { filename: 'wire_001.jpeg', title: 'Amethyst Dreams', description: 'Wire wrapped amethyst pendant with intricate spiral design', size: '2" x 1.5"', year: '2024' },
-          { filename: 'wire_004.jpeg', title: 'Crystal Embrace', description: 'Delicate wire work embracing natural crystal formations', size: '1.5" x 1"', year: '2024' },
-          { filename: 'wire_005.jpeg', title: 'Sacred Geometry', description: 'Sacred geometric patterns in wire and stone', size: '2.2" x 1.8"', year: '2024' },
-          { filename: 'wire_006.jpeg', title: 'Celestial Binding', description: 'Celestial-inspired wire wrapping techniques', size: '1.8" x 1.5"', year: '2024' },
-          { filename: 'wire_007.jpeg', title: 'Nature\'s Crown', description: 'Natural stone crowned with intricate wirework', size: '2.5" x 2"', year: '2024' },
-          { filename: 'wire_008.jpeg', title: 'Mystic Weave', description: 'Mystical patterns woven in copper and silver', size: '2" x 1.5"', year: '2024' },
-          { filename: 'wire_012.jpeg', title: 'Crystal Matrix', description: 'Complex matrix of wire and crystal energy', size: '2.8" x 2.2"', year: '2024' },
-          { filename: 'wire_013.jpeg', title: 'Elemental Flow', description: 'Flowing elements captured in wire art', size: '2.3" x 1.8"', year: '2024' },
-          { filename: 'wire_014.jpeg', title: 'Harmony Stone', description: 'Stone and wire in perfect harmony', size: '2" x 1.6"', year: '2024' },
-          { filename: 'wire_015.jpeg', title: 'Spiritual Mandala', description: 'Mandala patterns expressed in wire wrapping', size: '2.4" x 2"', year: '2024' },
-          { filename: 'wire_016.jpeg', title: 'Earth Connection', description: 'Connecting earth energies through wire and stone', size: '2.1" x 1.7"', year: '2024' },
-          { filename: 'wire_017.jpeg', title: 'Divine Framework', description: 'Divine geometric framework in precious metals', size: '2.6" x 2.1"', year: '2024' }
+          { filename: 'wire_005.jpeg', title: 'Amethyst Dreams', description: 'Wire wrapped amethyst pendant with intricate spiral design', size: '2" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_001.jpeg', title: 'Crystal Embrace', description: 'Delicate wire work embracing natural crystal formations', size: '1.5" x 1"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_004.jpeg', title: 'Sacred Geometry', description: 'Sacred geometric patterns in wire and stone', size: '2.2" x 1.8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_006.jpeg', title: 'Celestial Binding', description: 'Celestial-inspired wire wrapping techniques', size: '1.8" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_007.jpeg', title: 'Nature\'s Crown', description: 'Natural stone crowned with intricate wirework', size: '2.5" x 2"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_008.jpeg', title: 'Mystic Weave', description: 'Mystical patterns woven in copper and silver', size: '2" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_012.jpeg', title: 'Crystal Matrix', description: 'Complex matrix of wire and crystal energy', size: '2.8" x 2.2"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_013.jpeg', title: 'Elemental Flow', description: 'Flowing elements captured in wire art', size: '2.3" x 1.8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_014.jpeg', title: 'Harmony Stone', description: 'Stone and wire in perfect harmony', size: '2" x 1.6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_015.jpeg', title: 'Spiritual Mandala', description: 'Mandala patterns expressed in wire wrapping', size: '2.4" x 2"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -205,14 +205,14 @@ class DreamsMeowGallery {
         medium: 'Mixed Media',
         colorCategory: 'red',
         images: [
-          { filename: '1.jpeg', title: 'Genesis', description: 'The beginning of conscious evolution', size: 'Mixed Media', year: '2024' },
-          { filename: '2.jpeg', title: 'Emergence', description: 'Emerging consciousness breaking through barriers', size: 'Mixed Media', year: '2024' },
-          { filename: '3.jpeg', title: 'Transformation', description: 'The process of spiritual transformation', size: 'Mixed Media', year: '2024' },
-          { filename: '4.jpeg', title: 'Ascension', description: 'Rising to higher levels of consciousness', size: 'Mixed Media', year: '2024' },
-          { filename: '5.jpeg', title: 'Integration', description: 'Integrating new levels of awareness', size: 'Mixed Media', year: '2024' },
-          { filename: '7.jpeg', title: 'Expansion', description: 'Consciousness expanding beyond limitations', size: 'Mixed Media', year: '2024' },
-          { filename: '8.jpeg', title: 'Unity', description: 'The realization of universal unity', size: 'Mixed Media', year: '2024' },
-          { filename: '9.jpeg', title: 'Transcendence', description: 'Transcending the boundaries of form', size: 'Mixed Media', year: '2024' }
+          { filename: '1.jpeg', title: 'Genesis', description: 'The beginning of conscious evolution', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: '2.jpeg', title: 'Emergence', description: 'Emerging consciousness breaking through barriers', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: '3.jpeg', title: 'Transformation', description: 'The process of spiritual transformation', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: '4.jpeg', title: 'Ascension', description: 'Rising to higher levels of consciousness', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: '5.jpeg', title: 'Integration', description: 'Integrating new levels of awareness', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: '7.jpeg', title: 'Expansion', description: 'Consciousness expanding beyond limitations', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: '8.jpeg', title: 'Unity', description: 'The realization of universal unity', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: '9.jpeg', title: 'Transcendence', description: 'Transcending the boundaries of form', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -222,17 +222,17 @@ class DreamsMeowGallery {
         medium: 'Photography',
         colorCategory: 'green',
         images: [
-          { filename: 'photo_003.jpg', title: 'Forest Cathedral', description: 'Sunlight streaming through ancient forest canopy', size: 'Digital', year: '2024' },
-          { filename: 'photo_004.jpg', title: 'Mountain Majesty', description: 'Majestic peaks touching the infinite sky', size: 'Digital', year: '2024' },
-          { filename: 'photo_005.jpg', title: 'River\'s Journey', description: 'Water\'s eternal journey through landscape', size: 'Digital', year: '2024' },
-          { filename: 'photo_043.jpg', title: 'Wildflower Meditation', description: 'Delicate wildflowers in morning meditation', size: 'Digital', year: '2024' },
-          { filename: 'photo_044.jpg', title: 'Stone Wisdom', description: 'Ancient stones holding earth\'s wisdom', size: 'Digital', year: '2024' },
-          { filename: 'photo_045.jpg', title: 'Cloud Dance', description: 'Clouds dancing across endless skies', size: 'Digital', year: '2024' },
-          { filename: 'photo_046.jpg', title: 'Tree Spirit', description: 'The spiritual presence within old growth trees', size: 'Digital', year: '2024' },
-          { filename: 'photo_047.jpg', title: 'Ocean\'s Breath', description: 'The rhythmic breathing of ocean waves', size: 'Digital', year: '2024' },
-          { filename: 'photo_048.jpg', title: 'Desert Silence', description: 'The profound silence of desert landscapes', size: 'Digital', year: '2024' },
-          { filename: 'photo_049.jpg', title: 'Sunset Reflection', description: 'Day\'s end reflected in still waters', size: 'Digital', year: '2024' },
-          { filename: 'photo_050.jpg', title: 'Earth\'s Patterns', description: 'Natural patterns revealing earth\'s geometry', size: 'Digital', year: '2024' }
+          { filename: 'photo_003.jpg', title: 'Forest Cathedral', description: 'Sunlight streaming through ancient forest canopy', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_004.jpg', title: 'Mountain Majesty', description: 'Majestic peaks touching the infinite sky', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_005.jpg', title: 'River\'s Journey', description: 'Water\'s eternal journey through landscape', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_043.jpg', title: 'Wildflower Meditation', description: 'Delicate wildflowers in morning meditation', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_044.jpg', title: 'Stone Wisdom', description: 'Ancient stones holding earth\'s wisdom', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_045.jpg', title: 'Cloud Dance', description: 'Clouds dancing across endless skies', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_046.jpg', title: 'Tree Spirit', description: 'The spiritual presence within old growth trees', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_047.jpg', title: 'Ocean\'s Breath', description: 'The rhythmic breathing of ocean waves', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_048.jpg', title: 'Desert Silence', description: 'The profound silence of desert landscapes', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_049.jpg', title: 'Sunset Reflection', description: 'Day\'s end reflected in still waters', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_050.jpg', title: 'Earth\'s Patterns', description: 'Natural patterns revealing earth\'s geometry', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -242,11 +242,11 @@ class DreamsMeowGallery {
         medium: 'Photography',
         colorCategory: 'yellow',
         images: [
-          { filename: 'photo_007.jpg', title: 'Light Spiral', description: 'Spiraling light creating cosmic patterns', size: 'Digital', year: '2024' },
-          { filename: 'photo_008.jpg', title: 'Energy Flow', description: 'Energy flowing through space and time', size: 'Digital', year: '2024' },
-          { filename: 'photo_009.jpg', title: 'Luminous Path', description: 'Path of light through darkness', size: 'Digital', year: '2024' },
-          { filename: 'photo_020.jpg', title: 'Light Weaving', description: 'Weaving patterns of pure light', size: 'Digital', year: '2024' },
-          { filename: 'photo_034.jpg', title: 'Celestial Dance', description: 'Light dancing like celestial bodies', size: 'Digital', year: '2024' }
+          { filename: 'photo_034.jpg', title: 'Light Spiral', description: 'Spiraling light creating cosmic patterns', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_008.jpg', title: 'Energy Flow', description: 'Energy flowing through space and time', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_009.jpg', title: 'Luminous Path', description: 'Path of light through darkness', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_020.jpg', title: 'Light Weaving', description: 'Weaving patterns of pure light', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_007.jpg', title: 'Celestial Dance', description: 'Light dancing like celestial bodies', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -256,14 +256,22 @@ class DreamsMeowGallery {
         medium: 'Photography',
         colorCategory: 'blue',
         images: [
-          { filename: 'photo_022.jpg', title: 'Urban Geometry', description: 'Geometric patterns in urban architecture', size: 'Digital', year: '2024' },
-          { filename: 'photo_023.jpg', title: 'Shadow Play', description: 'Interplay of light and shadow', size: 'Digital', year: '2024' },
-          { filename: 'photo_029.jpg', title: 'Reflection Study', description: 'Studies in reflection and symmetry', size: 'Digital', year: '2024' },
-          { filename: 'photo_035.jpg', title: 'Texture Exploration', description: 'Exploring textures in everyday objects', size: 'Digital', year: '2024' },
-          { filename: 'photo_037.jpg', title: 'Minimal Composition', description: 'Minimalist approach to composition', size: 'Digital', year: '2024' },
-          { filename: 'photo_038.jpg', title: 'Color Study', description: 'Studies in color and emotion', size: 'Digital', year: '2024' },
-          { filename: 'photo_041.jpg', title: 'Abstract Reality', description: 'Finding abstraction in reality', size: 'Digital', year: '2024' },
-          { filename: 'photo_042.jpg', title: 'Moment Captured', description: 'Capturing fleeting moments of beauty', size: 'Digital', year: '2024' }
+          { filename: 'photo_042.jpg', title: 'Urban Geometry', description: 'Geometric patterns in urban architecture', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_029.jpg', title: 'Reflection Study', description: 'Studies in reflection and symmetry', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_035.jpg', title: 'Texture Exploration', description: 'Exploring textures in everyday objects', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_037.jpg', title: 'Minimal Composition', description: 'Minimalist approach to composition', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_038.jpg', title: 'Color Study', description: 'Studies in color and emotion', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_041.jpg', title: 'Abstract Reality', description: 'Finding abstraction in reality', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_022.jpg', title: 'Moment Captured', description: 'Capturing fleeting moments of beauty', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8360.JPG', title: 'Architectural Flow', description: 'Flowing lines in modern architecture', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8362.JPG', title: 'Light and Form', description: 'Interplay between light and architectural form', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8363.JPG', title: 'Structural Beauty', description: 'Finding beauty in structural elements', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8365.JPG', title: 'Shadow Studies', description: 'Exploring shadows in architectural photography', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8366.JPG', title: 'Contrast Play', description: 'Playing with contrasts in urban photography', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8367.JPG', title: 'Linear Perspective', description: 'Linear elements creating perspective', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8368.JPG', title: 'Rhythmic Elements', description: 'Rhythmic patterns in architectural details', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8369.JPG', title: 'Spatial Composition', description: 'Compositional studies of space and form', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8370.JPG', title: 'Contemporary Vision', description: 'Contemporary architectural vision', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -273,16 +281,15 @@ class DreamsMeowGallery {
         medium: 'Photography',
         colorCategory: 'purple',
         images: [
-          { filename: 'photo_010.jpg', title: 'Inner Light', description: 'Exploring the light within', size: 'Digital', year: '2024' },
-          { filename: 'photo_011.jpg', title: 'Shadow Self', description: 'Embracing the shadow aspects', size: 'Digital', year: '2024' },
-          { filename: 'photo_012.jpg', title: 'Transformation', description: 'Capturing moments of personal transformation', size: 'Digital', year: '2024' },
-          { filename: 'photo_013.jpg', title: 'Reflection', description: 'Deep self-reflection through imagery', size: 'Digital', year: '2024' },
-          { filename: 'photo_014.jpg', title: 'Creative Spirit', description: 'The creative spirit in motion', size: 'Digital', year: '2024' },
-          { filename: 'photo_015.jpg', title: 'Artistic Identity', description: 'Exploring artistic identity and expression', size: 'Digital', year: '2024' },
-          { filename: 'photo_016.jpg', title: 'Inner Journey', description: 'Visual documentation of inner journey', size: 'Digital', year: '2024' },
-          { filename: 'photo_017.jpg', title: 'Self Discovery', description: 'Moments of self-discovery and growth', size: 'Digital', year: '2024' },
-          { filename: 'photo_018.jpg', title: 'Authentic Self', description: 'Revealing the authentic self', size: 'Digital', year: '2024' },
-          { filename: 'photo_051.jpg', title: 'Present Moment', description: 'Being fully present in the moment', size: 'Digital', year: '2024' }
+          { filename: 'photo_018.jpg', title: 'Inner Light', description: 'Exploring the light within', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_011.jpg', title: 'Shadow Self', description: 'Embracing the shadow aspects', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_013.jpg', title: 'Reflection', description: 'Deep self-reflection through imagery', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_014.jpg', title: 'Creative Spirit', description: 'The creative spirit in motion', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_015.jpg', title: 'Artistic Identity', description: 'Exploring artistic identity and expression', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_016.jpg', title: 'Inner Journey', description: 'Visual documentation of inner journey', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_017.jpg', title: 'Self Discovery', description: 'Moments of self-discovery and growth', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_051.jpg', title: 'Authentic Self', description: 'Revealing the authentic self', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_010.jpg', title: 'Present Moment', description: 'Being fully present in the moment', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       }
     ];
@@ -298,7 +305,8 @@ class DreamsMeowGallery {
           series: project.title,
           medium: project.medium,
           imageUrl: `/art-portfolio/${project.id}/${image.filename}`,
-          colorCategory: project.colorCategory
+          colorCategory: project.colorCategory,
+          purchaseUrl: image.purchaseUrl
         });
       });
     });
@@ -685,7 +693,6 @@ class DreamsMeowGallery {
       }, 3000);
 
     } catch (error) {
-      console.error('Form submission error:', error);
       this.setSubmitButtonState(submitBtn, 'default');
       this.showFormMessage('Oops! Something went wrong. Please try again.', 'error');
     }
@@ -695,12 +702,6 @@ class DreamsMeowGallery {
     // Simulate API call - replace with actual implementation
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        // For now, just log the form data
-        console.log('Contact form submission:');
-        for (const [key, value] of formData.entries()) {
-          console.log(`${key}: ${value}`);
-        }
-
         // In a real implementation, you would send this to your backend
         // or use a service like EmailJS, Formspree, or Netlify Forms
 
@@ -841,6 +842,14 @@ class DreamsMeowGallery {
           <span class="metadata-value">${artwork.year}</span>
         </div>
       </div>
+      ${artwork.purchaseUrl ? `
+        <div class="art-actions">
+          <button class="purchase-btn" data-url="${artwork.purchaseUrl}">
+            <span class="btn-text">Purchase</span>
+            <span class="btn-icon">🛒</span>
+          </button>
+        </div>
+      ` : ''}
     `;
 
     card.appendChild(imageContainer);
@@ -873,6 +882,16 @@ class DreamsMeowGallery {
       card.style.setProperty('--x', `${x}%`);
       card.style.setProperty('--y', `${y}%`);
     });
+
+    // Handle purchase button click
+    const purchaseBtn = card.querySelector('.purchase-btn');
+    if (purchaseBtn) {
+      purchaseBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent opening immersive view
+        const url = purchaseBtn.getAttribute('data-url');
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    }
 
     // Click to open immersive view
     card.addEventListener('click', () => this.openImmersiveView(artwork));
@@ -933,6 +952,15 @@ class DreamsMeowGallery {
           <div class="slideshow-counter">
             <span>${currentImageIndex + 1} of ${slideshowImages.length}</span>
           </div>
+          ${artwork.purchaseUrl ? `
+            <div class="slideshow-actions">
+              <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl}">
+                <span class="btn-text">Purchase This Artwork</span>
+                <span class="btn-icon">🛒</span>
+                <span class="btn-glow"></span>
+              </button>
+            </div>
+          ` : ''}
         </div>
         <div class="slideshow-controls">
           <button class="slideshow-btn prev-btn" id="prev-slide">‹</button>
@@ -943,6 +971,15 @@ class DreamsMeowGallery {
 
     // Set up slideshow controls
     this.setupSlideshow();
+
+    // Handle slideshow purchase button
+    const slideshowPurchaseBtn = artworkContainer.querySelector('.slideshow-purchase-btn');
+    if (slideshowPurchaseBtn) {
+      slideshowPurchaseBtn.addEventListener('click', () => {
+        const url = slideshowPurchaseBtn.getAttribute('data-url');
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    }
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -1015,6 +1052,7 @@ class DreamsMeowGallery {
     const description = document.querySelector('.slideshow-description');
     const metadata = document.querySelector('.slideshow-metadata');
     const counter = document.querySelector('.slideshow-counter span');
+    const slideshowInfo = document.querySelector('.slideshow-info');
 
     if (title) title.textContent = artwork.title;
     if (description) description.textContent = artwork.description;
@@ -1039,6 +1077,31 @@ class DreamsMeowGallery {
           <span class="metadata-value">${artwork.year}</span>
         </div>
       `;
+    }
+
+    // Update purchase button
+    let actionsContainer = slideshowInfo.querySelector('.slideshow-actions');
+    if (actionsContainer) {
+      actionsContainer.remove();
+    }
+
+    if (artwork.purchaseUrl) {
+      actionsContainer = document.createElement('div');
+      actionsContainer.className = 'slideshow-actions';
+      actionsContainer.innerHTML = `
+        <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl}">
+          <span class="btn-text">Purchase This Artwork</span>
+          <span class="btn-icon">🛒</span>
+          <span class="btn-glow"></span>
+        </button>
+      `;
+      slideshowInfo.appendChild(actionsContainer);
+
+      // Add event listener to new button
+      const purchaseBtn = actionsContainer.querySelector('.slideshow-purchase-btn');
+      purchaseBtn.addEventListener('click', () => {
+        window.open(artwork.purchaseUrl, '_blank', 'noopener,noreferrer');
+      });
     }
   }
 
@@ -1277,22 +1340,27 @@ class DreamsMeowGallery {
 
   // Initialize exhibition preview event listeners
   initializeExhibitionPreviews() {
-    const exhibitionPreviews = document.querySelectorAll('.exhibition-preview');
+    const exhibitionCards = document.querySelectorAll('.exhibition-card');
 
-    exhibitionPreviews.forEach(preview => {
-      // Remove any existing onclick attribute
-      preview.removeAttribute('onclick');
+    exhibitionCards.forEach(card => {
+      const preview = card.querySelector('.exhibition-preview');
+      if (preview) {
+        // Remove any existing onclick attribute from preview
+        preview.removeAttribute('onclick');
 
-      // Add proper event listener
-      preview.addEventListener('click', (event) => {
-        this.showExhibitionPreview(preview, event);
-      });
+        // Add click listener to entire card
+        card.addEventListener('click', (event) => {
+          this.showExhibitionPreview(preview, event);
+        });
+
+        // Add cursor pointer style to card
+        card.style.cursor = 'pointer';
+      }
     });
   }
 }
 
 // Initialize the gallery when DOM is loaded
-let gallery;
 document.addEventListener('DOMContentLoaded', () => {
-  gallery = new DreamsMeowGallery();
+  new DreamsMeowGallery();
 });
