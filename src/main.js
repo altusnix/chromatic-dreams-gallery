@@ -632,8 +632,11 @@ class DreamsMeowGallery {
       return;
     }
 
-    // Add form-name for Netlify
-    formData.append('form-name', 'contact');
+    // Note: form-name is already included via hidden input in HTML
+    // Ensure it's set (in case it's somehow missing)
+    if (!formData.has('form-name')) {
+      formData.set('form-name', 'contact');
+    }
 
     // Show loading state
     this.setSubmitButtonState(submitBtn, 'loading');
@@ -663,18 +666,26 @@ class DreamsMeowGallery {
   async submitContactForm(formData) {
     // Submit to Netlify Forms
     try {
+      const body = new URLSearchParams(formData).toString();
+      console.log('Submitting form with data:', body);
+
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: body
       });
 
+      console.log('Form submission response:', response.status, response.statusText);
+
       if (!response.ok) {
-        throw new Error('Form submission failed');
+        const errorText = await response.text();
+        console.error('Form submission error:', errorText);
+        throw new Error(`Form submission failed: ${response.status} ${response.statusText}`);
       }
 
       return { success: true };
     } catch (error) {
+      console.error('Form submission exception:', error);
       throw error;
     }
   }
@@ -973,9 +984,25 @@ class DreamsMeowGallery {
   }
 
   transitionToSlide(newIndex) {
+    // Safety checks
+    if (!this.projectImages || !this.projectImages.length) {
+      console.error('No project images available');
+      return;
+    }
+
+    if (newIndex < 0 || newIndex >= this.projectImages.length) {
+      console.error('Invalid slide index:', newIndex);
+      return;
+    }
+
     const currentImg = document.getElementById('current-slide-image');
     const nextImg = document.getElementById('next-slide-image');
     const newArtwork = this.projectImages[newIndex];
+
+    if (!newArtwork || !newArtwork.imageUrl) {
+      console.error('Invalid artwork at index:', newIndex);
+      return;
+    }
 
     // Preload next image
     nextImg.src = newArtwork.imageUrl;
