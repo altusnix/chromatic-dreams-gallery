@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/jpeg" href="/logo/logo.jpeg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Dreams Meow - Visionary Art Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,27 @@
     <div id="app">
       <!-- Animated Background Canvas -->
       <canvas id="background-canvas" class="background-canvas"></canvas>
+
+      <!-- Fixed Navigation (appears on scroll) -->
+      <nav id="fixed-nav" class="fixed-nav">
+        <div class="fixed-nav-container">
+          <div class="fixed-nav-brand">
+            <span class="brand-text">Dreams Meow</span>
+          </div>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <div class="fixed-nav-links" id="fixed-nav-links">
+            <a href="#gallery" class="fixed-nav-link" data-scroll="gallery-section">Gallery</a>
+            <a href="https://snowmeow.square.site/" target="_blank" class="fixed-nav-link">Shop</a>
+            <a href="#about" class="fixed-nav-link" data-scroll="about-section">About</a>
+            <a href="#exhibitions" class="fixed-nav-link" data-scroll="exhibitions-section">Exhibitions</a>
+            <a href="#contact" class="fixed-nav-link" data-scroll="contact-section">Contact</a>
+          </div>
+        </div>
+      </nav>
 
       <!-- Home Page -->
       <div id="home-page" class="home-page">
@@ -167,90 +188,30 @@
         <!-- Section Separator -->
         <div class="section-separator"></div>
 
-        <!-- Gallery Preview Section -->
-        <section class="preview-section">
-          <div class="preview-container">
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+          <div class="gallery-content">
             <h2 class="section-title">
-              <span class="title-gradient">Art Preview</span>
+              <span class="title-gradient">Art Gallery</span>
             </h2>
-            <p class="section-subtitle">Journey through mystical realms and cosmic visions</p>
+            <p class="section-subtitle">Explore the complete collection</p>
 
-            <!-- Banner Slider -->
-            <div class="banner-slider" id="banner-slider">
-              <div class="slider-track" id="slider-track">
-                <!-- Project slides will be generated here -->
-              </div>
+            <!-- Project Navigation -->
+            <nav class="project-nav">
+              <button class="project-nav-btn" data-project="all" data-hue="0">All</button>
+              <button class="project-nav-btn" data-project="glass" data-hue="240">Glass Art</button>
+              <button class="project-nav-btn" data-project="wire-wraps" data-hue="270">Wire Wraps</button>
+              <button class="project-nav-btn active" data-project="evolution-project" data-hue="0">Evolution</button>
+              <button class="project-nav-btn" data-project="nature" data-hue="120">Nature</button>
+              <button class="project-nav-btn" data-project="light-paintings" data-hue="60">Light Paintings</button>
+              <button class="project-nav-btn" data-project="photography" data-hue="240">Photography</button>
+              <button class="project-nav-btn" data-project="me" data-hue="270">Self Portraits</button>
+            </nav>
 
-              <!-- Slider Navigation -->
-              <div class="slider-nav">
-                <button class="slider-btn prev" id="slider-prev">‹</button>
-                <button class="slider-btn next" id="slider-next">›</button>
-              </div>
-
-              <!-- Slider Dots -->
-              <div class="slider-dots" id="slider-dots">
-                <!-- Dots will be generated here -->
-              </div>
-            </div>
-
-            <div class="preview-actions">
-              <button class="cta-btn primary" id="view-gallery-btn">
-                <span>View Full Gallery</span>
-                <span class="btn-glow"></span>
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section Separator -->
-        <div class="section-separator"></div>
-
-        <!-- Where to Buy Section -->
-        <section class="where-to-buy-section">
-          <div class="where-to-buy-container">
-            <h2 class="section-title">
-              <span class="title-gradient">Where to Buy My Art</span>
-            </h2>
-            <p class="section-subtitle">Find original artwork, prints, and handcrafted pieces through these channels</p>
-
-            <div class="buy-options-grid">
-              <div class="buy-option primary">
-                <div class="option-header">
-                  <h3>Snow Meow Art Store</h3>
-                  <span class="option-badge">Official Store</span>
-                </div>
-                <p>My official online store featuring the complete collection of original artworks, jewelry, and prints with secure checkout and worldwide shipping.</p>
-                <div class="option-features">
-                  <div class="feature">✓ Original paintings & mixed media</div>
-                  <div class="feature">✓ Wire wrapped jewelry</div>
-                  <div class="feature">✓ Glass art pieces</div>
-                  <div class="feature">✓ Photography prints</div>
-                </div>
-                <a href="https://snowmeow.square.site/" class="buy-btn primary" target="_blank" rel="noopener">Visit Store</a>
-              </div>
-
-              <div class="buy-option">
-                <div class="option-header">
-                  <h3>Gallery Exhibitions</h3>
-                  <span class="option-badge">In Person</span>
-                </div>
-                <p>Purchase pieces directly at gallery exhibitions and art shows. Check my exhibitions page for upcoming events and locations.</p>
-                <div class="option-features">
-                  <div class="feature">✓ See artwork in person</div>
-                  <div class="feature">✓ Meet the artist</div>
-                  <div class="feature">✓ Exclusive show pieces</div>
-                  <div class="feature">✓ Direct purchase</div>
-                </div>
-                <button class="buy-btn" data-page="exhibitions">View Exhibitions</button>
-              </div>
-
-            </div>
-
-            <div class="buying-info">
-              <h4>Questions About Purchasing?</h4>
-              <p>Feel free to reach out with any questions about artwork, pricing, shipping, or availability. I'm here to help you find the perfect piece!</p>
-              <button class="contact-artist-btn" data-page="contact">Contact Me</button>
-            </div>
+            <!-- Gallery Grid -->
+            <main class="gallery-grid" id="gallery-grid-home">
+              <!-- Art pieces will be dynamically inserted here -->
+            </main>
           </div>
         </section>
 
@@ -265,10 +226,7 @@
                 <span class="title-gradient">About Dreams Meow</span>
               </h2>
               <p class="about-text">
-                My work explores the space between decay and rebirth across glass, photography, wire wrapping, and mixed media—where the self dissolves, reforms, and mutates in surreal, otherworldly environments. Through molten glass that cools into new forms, captured moments of transformation in photography, and wire that bends into organic sculptures, I create beings in flux; growing through decay, awakening through distortion.
-              </p>
-              <p class="about-text">
-                Each medium becomes a portal of transformation where perception fractures and truth emerges in strange, fluid forms. Whether through the refractive properties of glass, the frozen moments of photographic revelation, or the tactile meditation of wire wrapping, mushrooms, eyes, spores, and spirit figures appear as symbols of inner growth, decay, and rebirth. My work invites viewers to confront the beauty and discomfort of becoming across multiple dimensions—to see change not as a destination, but as a continual, chaotic unfolding that manifests through fire, light, and touch.
+                My work explores the space between decay and rebirth across glass, photography, wire wrapping, and mixed media—where the self dissolves, reforms, and mutates in surreal, otherworldly environments. Through molten glass cooling into new forms, captured moments of transformation, and wire bent into organic sculptures, I create beings in flux; growing through decay, awakening through distortion. Each medium becomes a portal where perception fractures and truth emerges in strange, fluid forms, with recurring motifs of mushrooms, eyes, spores, and spirit figures symbolizing inner growth and metamorphosis. My practice invites viewers to confront the beauty and discomfort of becoming—to see change not as a destination, but as a continual, chaotic unfolding that manifests through fire, light, and touch.
               </p>
             </div>
             <div class="about-visual">
@@ -278,7 +236,7 @@
               <div class="artistic-mediums">
                 <h3>Mixed Media Artist</h3>
                 <div class="tag-cloud">
-                  <span class="tag large color-1">Mixed Media</span>
+                  <span class="tag large color-1" style="color: #FF1493; border-color: #FF1493;">Mixed Media</span>
                   <span class="tag medium color-2">Acrylic</span>
                   <span class="tag small color-3">Watercolor</span>
                   <span class="tag large color-4">Digital Art</span>
@@ -287,6 +245,8 @@
                   <span class="tag medium color-7">Flameworking</span>
                   <span class="tag small color-8">Graphic Design</span>
                   <span class="tag large color-9">Web Design</span>
+                  <span class="tag medium color-1" style="color: #B695C0; border-color: #B695C0;">Jewelry Maker</span>
+                  <span class="tag small color-2">Wire Wrapping</span>
                 </div>
               </div>
             </div>
@@ -310,6 +270,18 @@
                 <span class="title-gradient">Exhibitions</span>
               </h3>
               <div class="exhibitions-grid">
+                <div class="exhibition-card">
+                  <div class="exhibition-preview" data-preview="/art-portfolio/me/photo_051.jpg" onclick="gallery.showExhibitionPreview(this, event)">
+                    <img src="/art-portfolio/me/photo_051.jpg" alt="Here's me Preview" class="preview-thumb">
+                  </div>
+                  <div class="exhibition-content">
+                    <div class="exhibition-date">Oct 2025</div>
+                    <div class="exhibition-details">
+                      <h4>Here's me</h4>
+                      <p>Grosse Pointe Artists Association, Michigan</p>
+                    </div>
+                  </div>
+                </div>
                 <div class="exhibition-card">
                   <div class="exhibition-preview" data-preview="/art-portfolio/evolution-project/2.jpeg" onclick="gallery.showExhibitionPreview(this, event)">
                     <img src="/art-portfolio/evolution-project/2.jpeg" alt="Duality Preview" class="preview-thumb">
@@ -559,6 +531,8 @@
               <!-- Contact Form -->
               <div class="contact-form-container">
                 <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <!-- Hidden field for Netlify form detection -->
+                  <input type="hidden" name="form-name" value="contact" />
                   <!-- Honeypot field for spam protection -->
                   <div style="display: none;">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>

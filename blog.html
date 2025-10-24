@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Blog - Dreams Meow Gallery</title>
+  <link rel="icon" type="image/x-icon" href="/logo/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Blog Container -->
+    <div class="blog-container">
+      <!-- Header -->
+      <header class="blog-header">
+        <div class="header-content">
+          <a href="/" class="logo-link">
+            <h1 class="blog-title">
+              <span class="title-gradient">Dreams Meow</span>
+            </h1>
+            <p class="blog-subtitle">Artist's Journal</p>
+          </a>
+
+          <nav class="blog-nav">
+            <div class="nav-dropdown">
+              <button class="dropdown-toggle active" id="categories-dropdown">
+                <span>Categories</span>
+                <span class="dropdown-arrow">▼</span>
+              </button>
+              <div class="dropdown-menu" id="categories-menu">
+                <a href="/blog.html" class="dropdown-item">
+                  <div class="dropdown-item-title">All Posts</div>
+                  <div class="dropdown-item-meta">Browse all articles</div>
+                </a>
+                <a href="/blog.html?category=process-technique" class="dropdown-item">
+                  <div class="dropdown-item-title">Process & Technique</div>
+                  <div class="dropdown-item-meta">Methods and craftsmanship</div>
+                </a>
+                <a href="/blog.html?category=philosophy-inspiration" class="dropdown-item">
+                  <div class="dropdown-item-title">Philosophy & Inspiration</div>
+                  <div class="dropdown-item-meta">Thoughts and creative vision</div>
+                </a>
+                <a href="/blog.html?category=personal-journey" class="dropdown-item">
+                  <div class="dropdown-item-title">Personal Journey & Stories</div>
+                  <div class="dropdown-item-meta">Life experiences and growth</div>
+                </a>
+                <a href="/blog.html?category=community-connection" class="dropdown-item">
+                  <div class="dropdown-item-title">Community & Connection</div>
+                  <div class="dropdown-item-meta">Building relationships through art</div>
+                </a>
+                <a href="/blog.html?category=practical-advice" class="dropdown-item">
+                  <div class="dropdown-item-title">Practical Advice</div>
+                  <div class="dropdown-item-meta">Tips and guidance</div>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Main Blog Content -->
+      <main class="blog-main">
+        <div class="blog-content">
+          <!-- Featured Post -->
+          <article class="featured-post">
+            <a href="/blog/the-evolution-of-glass.html" class="featured-post-link">
+              <div class="post-header">
+                <div class="post-category">Featured</div>
+                <h2 class="post-title">The Evolution of Glass: From Fire to Form</h2>
+                <div class="post-meta">
+                  <span class="post-date">December 15, 2024</span>
+                  <span class="post-author">by Dreams Meow</span>
+                  <span class="read-time">8 min read</span>
+                </div>
+              </div>
+
+              <div class="post-image">
+                <img src="/art-portfolio/glass/glass_017.jpeg" alt="Intricate glass sculpture with complex light refractions">
+              </div>
+
+              <div class="post-content">
+                <p>Working with glass has taught me that transformation requires both heat and patience. Each piece begins as raw material—silica, soda ash, limestone—ingredients that seem ordinary until they meet the forge's embrace.</p>
+
+                <p>In my latest series, I've been exploring the relationship between control and surrender. The molten glass has its own will, its own flow. My role isn't to dominate but to guide, to suggest rather than demand. This dance between artist and medium mirrors the deeper transformations we undergo in life.</p>
+
+                <blockquote>
+                  "Glass teaches us that beauty often emerges from the space between structure and chaos, between what we plan and what the material decides to become."
+                </blockquote>
+
+                <p class="read-more-text">Read the full article to explore the philosophy of glass transformation and see the complete collection...</p>
+              </div>
+
+              <div class="post-footer">
+                <div class="post-tags">
+                  <span class="tag">Glass Art</span>
+                  <span class="tag">Process</span>
+                  <span class="tag">Transformation</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Blog Posts Grid -->
+          <section class="blog-posts">
+            <h3 class="section-title">Recent Posts</h3>
+
+            <div class="posts-grid">
+              <article class="blog-post">
+                <a href="/blog/the-evolution-of-glass.html" class="post-link">
+                  <div class="post-image-small">
+                    <img src="/art-portfolio/glass/glass_017.jpeg" alt="Intricate glass sculpture with complex light refractions">
+                  </div>
+                  <div class="post-content-small">
+                    <div class="post-category">Process & Technique</div>
+                    <h4 class="post-title-small">The Evolution of Glass: From Fire to Form</h4>
+                    <p class="post-excerpt">Working with glass has taught me that transformation requires both heat and patience. Each piece begins as raw material...</p>
+                    <div class="post-meta-small">
+                      <span class="post-date">Dec 15, 2024</span>
+                      <span class="read-time">8 min read</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </section>
+
+          <!-- Newsletter Signup -->
+          <section class="newsletter-section">
+            <div class="newsletter-content">
+              <h3 class="newsletter-title">Stay Connected</h3>
+              <p class="newsletter-description">Subscribe to receive updates about new artwork, exhibitions, and behind-the-scenes insights into my creative process.</p>
+
+              <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field-newsletter">
+                <div style="display: none;">
+                  <label>Don't fill this out if you're human: <input name="bot-field-newsletter" /></label>
+                </div>
+
+                <div class="newsletter-input-group">
+                  <input type="email" name="email" placeholder="Enter your email" required class="newsletter-input">
+                  <button type="submit" class="newsletter-btn">
+                    <span>Subscribe</span>
+                    <span class="btn-glow"></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="blog-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Dreams Meow Gallery</h4>
+            <p>Exploring consciousness through glass, wire, and light</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="footer-links">
+              <a href="https://instagram.com/snowkittenmeow" target="_blank">Instagram</a>
+              <a href="https://www.facebook.com/share/g/1As1KiJ8jA/" target="_blank">Facebook</a>
+              <a href="https://snowmeow.square.site/" target="_blank">Shop</a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <div class="footer-links">
+              <a href="/">Home</a>
+              <a href="/#gallery">Gallery</a>
+              <a href="/blog.html">Blog</a>
+              <a href="/#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Dreams Meow Gallery. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Initialize dropdown functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggle = document.getElementById('categories-dropdown');
+      const dropdownMenu = document.getElementById('categories-menu');
+
+      if (dropdownToggle && dropdownMenu) {
+        dropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const isOpen = dropdownMenu.classList.contains('open');
+
+          if (isOpen) {
+            dropdownToggle.classList.remove('open');
+            dropdownMenu.classList.remove('open');
+          } else {
+            dropdownToggle.classList.add('open');
+            dropdownMenu.classList.add('open');
+          }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownToggle.classList.remove('open');
+            dropdownMenu.classList.remove('open');
+          }
+        });
+
+        // Close dropdown on escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            dropdownToggle.classList.remove('open');
+            dropdownMenu.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

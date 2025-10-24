@@ -4,7 +4,7 @@ import './style.css'
 
 class DreamsMeowGallery {
   constructor() {
-    this.currentFilter = 'all';
+    this.currentFilter = 'evolution-project';
     this.projects = [];
     this.allImages = [];
     this.canvas = null;
@@ -12,8 +12,6 @@ class DreamsMeowGallery {
     this.particles = [];
     this.mousePos = { x: 0, y: 0 };
     this.currentPage = 'home';
-    this.heroCanvas = null;
-    this.heroCtx = null;
     this.currentProject = null;
     this.currentImageIndex = 0;
     // Initialize banner slider properties (separate from gallery slideshow)
@@ -32,6 +30,7 @@ class DreamsMeowGallery {
     this.setupEventListeners();
     this.startBackgroundAnimation();
     this.initializeExhibitionPreviews();
+    this.initializeFixedNav();
     this.showPage('home');
   }
 
@@ -160,23 +159,23 @@ class DreamsMeowGallery {
         medium: 'Glass Sculpture',
         colorCategory: 'blue',
         images: [
-          { filename: 'hands3.jpeg', title: 'Crystal Refraction', description: 'Light dancing through transparent forms', size: '8" x 6" x 4"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_001.jpg', title: 'Luminous Depths', description: 'Exploring the interplay of light and shadow', size: '10" x 8" x 6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_002.jpg', title: 'Fractured Light', description: 'Breaking light into spectrum components', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_003.jpg', title: 'Crystalline Dreams', description: 'Dreams captured in crystal formations', size: '6" x 6" x 6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_004.jpg', title: 'Transparent Visions', description: 'Visions through translucent medium', size: '14" x 12" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_005.jpg', title: 'Prism Portal', description: 'Gateway through prismatic glass', size: '16" x 14" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_006.jpg', title: 'Light Captured', description: 'Capturing light in solid form', size: '8" x 8" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_007.jpg', title: 'Crystal Cascade', description: 'Flowing forms in crystalline structure', size: '18" x 16" x 14"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_010.jpeg', title: 'Illuminated Geometry', description: 'Geometric patterns in illuminated glass', size: '10" x 10" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_011.jpeg', title: 'Spectral Formation', description: 'Formation through spectral analysis', size: '12" x 12" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'glass_017.jpeg', title: 'Radiant Structure', description: 'Structural beauty through radiant light', size: '20" x 18" x 16"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wireglass_009.jpeg', title: 'Crystal Matrix', description: 'Complex crystalline matrix formations', size: '14" x 12" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wireglass_012.jpeg', title: 'Ethereal Transparency', description: 'Ethereal qualities of transparent materials', size: '16" x 14" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wireglass_013.jpeg', title: 'Light Symphony', description: 'Symphony of light through glass', size: '18" x 16" x 14"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'hands1.jpeg', title: 'Prismatic Dreams', description: 'Dreams expressed through prismatic forms', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'hands2.jpeg', title: 'Crystalline Touch', description: 'Hands interacting with crystalline formations', size: '10" x 8" x 6"', year: '2024', purchaseUrl: '' },
-          { filename: 'glass_000.jpeg', title: 'Glass Harmony', description: 'Human touch bringing harmony to glass art', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
+          { filename: 'hands3.jpeg', title: 'Boro Glass Hands', description: 'Each hand is flameworked from borosilicate glass rods, sculpted and fused finger by finger in a 2000-degree torch flame.', size: '8" x 6" x 4"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_001.jpg', title: 'Chainsaw Collab with Gibson Glass', description: 'Each hand is flameworked from borosilicate glass rods, sculpted and fused finger by finger in a 2000-degree torch flame. Shown and sold at Stoked CT Gallery.', size: '10" x 8" x 6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_002.jpg', title: 'Glass Vase', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_003.jpg', title: 'Boro Glass Alien Hand Pendant', description: 'Each hand is flameworked from borosilicate glass rods, sculpted and fused finger by finger in a 2000-degree torch flame.', size: '6" x 6" x 6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_004.jpg', title: 'Boro Glass Hand Pendants', description: 'Each hand is flameworked from borosilicate glass rods, sculpted and fused finger by finger in a 2000-degree torch flame.', size: '14" x 12" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_005.jpg', title: 'Glass Peeps Pendant', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '16" x 14" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_006.jpg', title: 'Glass Vase', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '8" x 8" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_007.jpg', title: 'Glass Turtle', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '18" x 16" x 14"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_010.jpeg', title: 'Glass Turtle', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '10" x 10" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_011.jpeg', title: 'Glass Chicken Feet', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '12" x 12" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'glass_017.jpeg', title: 'Glass UV Glow Moana Inspired Heart of tafiti', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '20" x 18" x 16"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wireglass_009.jpeg', title: 'Glass UV Glow Moana Inspired Heart of tafiti', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '14" x 12" x 10"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wireglass_012.jpeg', title: 'Glass Galaxy Pendant', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '16" x 14" x 12"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wireglass_013.jpeg', title: 'Boro Glass Hand Pendants', description: 'Each hand is flameworked from borosilicate glass rods, sculpted and fused finger by finger in a 2000-degree torch flame.', size: '18" x 16" x 14"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'hands1.jpeg', title: 'Boro Glass Hand Pendants', description: 'Each hand is flameworked from borosilicate glass rods, sculpted and fused finger by finger in a 2000-degree torch flame. Shown and sold at Nasty Women Gallery', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'hands2.jpeg', title: 'Glass Turtle', description: 'Flameworked from borosilicate glass rods, sculpted and fused in a 2000-degree torch flame.', size: '10" x 8" x 6"', year: '2024', purchaseUrl: '' },
+          { filename: 'glass_000.jpeg', title: 'Boro Glass Hands', description: 'Each hand is flameworked from borosilicate glass rods, sculpted and fused finger by finger in a 2000-degree torch flame.', size: '12" x 10" x 8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -186,33 +185,36 @@ class DreamsMeowGallery {
         medium: 'Wire & Stone',
         colorCategory: 'purple',
         images: [
-          { filename: 'wire_005.jpeg', title: 'Amethyst Dreams', description: 'Wire wrapped amethyst pendant with intricate spiral design', size: '2" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_001.jpeg', title: 'Crystal Embrace', description: 'Delicate wire work embracing natural crystal formations', size: '1.5" x 1"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_004.jpeg', title: 'Sacred Geometry', description: 'Sacred geometric patterns in wire and stone', size: '2.2" x 1.8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_006.jpeg', title: 'Celestial Binding', description: 'Celestial-inspired wire wrapping techniques', size: '1.8" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_007.jpeg', title: 'Nature\'s Crown', description: 'Natural stone crowned with intricate wirework', size: '2.5" x 2"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_008.jpeg', title: 'Mystic Weave', description: 'Mystical patterns woven in copper and silver', size: '2" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_012.jpeg', title: 'Crystal Matrix', description: 'Complex matrix of wire and crystal energy', size: '2.8" x 2.2"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_013.jpeg', title: 'Elemental Flow', description: 'Flowing elements captured in wire art', size: '2.3" x 1.8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_014.jpeg', title: 'Harmony Stone', description: 'Stone and wire in perfect harmony', size: '2" x 1.6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'wire_015.jpeg', title: 'Spiritual Mandala', description: 'Mandala patterns expressed in wire wrapping', size: '2.4" x 2"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
+          { filename: 'wire_005.jpeg', title: 'Tree of Life Memorial', description: 'Copper spirals into sacred geometry, cradling stones that hold memories of those who\'ve passed beyond the veil.', size: '2" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_001.jpeg', title: 'Copper Wire Wrapped Dream Catcher', description: 'Oxidized copper weaves an intricate web within the sacred hoop, suspended with feathers and beads to filter the dreamscape.', size: '1.5" x 1"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_004.jpeg', title: 'Crystal Tree of Life', description: 'Raw copper branches reach through crystalline stones, forming a suspended portal between earth and sky.', size: '2.2" x 1.8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_006.jpeg', title: 'Jade Tree of Life Memorial', description: 'Wire roots embrace jade crystals in this memorial piece, channeling eternal growth through green stone.', size: '1.8" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_007.jpeg', title: 'Palmwood Wirewrap Pendant', description: 'Fossilized palmwood rests in copper coils, wearing ancient earth energy close to the heart.', size: '2.5" x 2"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_008.jpeg', title: 'Shell Tree of Life Pendant', description: 'Ocean memory captured—copper branches grow through seashell, creating a wearable talisman of sea and earth.', size: '2" x 1.5"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_013.jpeg', title: 'Stone Tree of Life Pendant', description: 'Gemstones bloom from copper branches in this wearable tree, carrying earth\'s wisdom against the skin.', size: '2.3" x 1.8"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_014.jpeg', title: 'Paua Tree of Life', description: 'Iridescent paua shell glows within copper branches, reflecting otherworldly light through twisted metal roots.', size: '2" x 1.6"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'wire_015.jpeg', title: 'Celestial Tree of Life', description: 'Copper branches grow across a crescent moon form, cradling star stones in this suspended lunar garden.', size: '2.4" x 2"', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
         id: 'evolution-project',
         title: 'Evolution Project',
         description: 'A series exploring the evolution of consciousness and form through mixed media artwork',
-        medium: 'Mixed Media',
+        medium: 'Acrylic on Paper',
         colorCategory: 'red',
         images: [
-          { filename: '1.jpeg', title: 'Genesis', description: 'The beginning of conscious evolution', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: '2.jpeg', title: 'Emergence', description: 'Emerging consciousness breaking through barriers', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: '3.jpeg', title: 'Transformation', description: 'The process of spiritual transformation', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: '4.jpeg', title: 'Ascension', description: 'Rising to higher levels of consciousness', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: '5.jpeg', title: 'Integration', description: 'Integrating new levels of awareness', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: '7.jpeg', title: 'Expansion', description: 'Consciousness expanding beyond limitations', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: '8.jpeg', title: 'Unity', description: 'The realization of universal unity', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: '9.jpeg', title: 'Transcendence', description: 'Transcending the boundaries of form', size: 'Mixed Media', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
+          { filename: '1.jpeg', title: 'Questioning', series: 'Evolution Series #1', description: 'A surreal fusion of nature and consciousness, bursting with cosmic detail and a watching eye that questions reality.', medium: 'Acrylic on paper', size: '4.5x6"', year: '2025', purchaseUrl: 'https://square.link/u/ucJtIkJg' },
+          { filename: '2.jpeg', title: 'The Dreamer', series: 'Evolution Series #2', description: 'The eye weeps and watches as spores of imagination bloom, blending decay and rebirth into a luminous dreamscape.', medium: 'Acrylic on paper', size: '4.5x6"', year: '2025', purchaseUrl: 'https://square.link/u/yeHZUE5T' },
+          { filename: '4.jpeg', title: 'Decay', series: 'Evolution Series #4', description: 'A surreal anatomy of the soul, tangled in fungi and flame, this face isn\'t dying, it\'s transforming.', medium: 'Acrylic on paper', size: '6x9"', year: '2025', purchaseUrl: 'https://square.link/u/2tbt8eOe' },
+          { filename: '5.jpeg', title: 'Melancholy', series: 'Evolution Series #5', description: 'This figure blooms in rot, draped in spore and silence—a portrait of survival in a world turned damp and strange.', medium: 'Acrylic on paper', size: '4.5x6"', year: '2025', purchaseUrl: '' },
+          { filename: '6.jpeg', title: 'Unquiet Mind', series: 'Evolution Series #6', description: 'Emotion leaks from every surface—there\'s no silence, only saturated feeling and the remnants of what it took to hold it in.', medium: 'Acrylic on paper', size: '4.5x6"', year: '2025', purchaseUrl: 'https://square.link/u/Ne2e8A7a' },
+          { filename: '7.jpeg', title: 'Becoming', series: 'Evolution Series #7', description: 'Flourish Beneath the Surface. An exploration of hidden brilliance, this portrait dissolves the line between adornment and identity, drawing light from shadow.', medium: 'Acrylic on paper', size: '4.5x6"', year: '2025', purchaseUrl: '' },
+          { filename: '8.jpeg', title: 'Mourning Bloom', series: 'Evolution Series #8', description: 'Sorrowful emergence of something once hidden—grief taking root & flowering in full, radiant color. The figure, with eyes ablaze & dripping emotion, becomes both a witness and a bloom of loss. What should wither instead bursts into life, expressing how pain can be both haunting & strangely beautiful', medium: 'Acrylic on paper', size: '6x9"', year: '2025', purchaseUrl: 'https://square.link/u/gkzCldzw' },
+          { filename: '9.jpeg', title: 'Between Worlds', series: 'Evolution Series #9', description: 'The unsettling beauty of transformation, where grief reshapes identity and the boundaries of flesh, memory, and dream begin to blur. Suspended in this liminal space, she exists both here and elsewhere, becoming something otherworldly while holding the weight of human emotion.', medium: 'Acrylic on paper', size: '4.5x6"', year: '2025', purchaseUrl: 'https://square.link/u/OGsdq0vy' },
+          { filename: '10.jpg', title: 'Gravity of Despair', series: 'Evolution Series #10', description: 'This work captures the crushing weight of inner turmoil. Hands shield the face as cosmic chaos drips downward, mirroring the struggle between silence and disorder within the mind. Cool blues contrasted with bursts of color reflect the relentless pull of despair.', medium: 'Acrylic on paper', size: '6x9"', year: '2025', purchaseUrl: '' },
+          { filename: '11.jpeg', title: 'Emergence', series: 'Evolution Series #11', description: 'In Emergence, evolution is portrayed not as a physical shift but as an awakening of the inner self. The cascading pigments mirror the shedding of old layers — each drip a step toward illumination. It is a portrait of transformation, from chaos to clarity, from being to becoming.', medium: 'Acrylic on Canvas', size: '12x16"', year: '2025', purchaseUrl: '' },
+          { filename: '12.jpeg', title: 'Bloom of Consciousness', series: 'Evolution Series #12', description: 'A figure emerges from shadow and color, crowned by the living pulse of nature. "Bloom of Consciousness" explores the intersection between growth and decay, where thoughts take root and emotions spill into the world. The vibrant drips suggest transformation, as if awareness itself is blooming from the soil of the mind.', medium: 'Acrylic on paper', size: '6x9"', year: '2025', purchaseUrl: '' },
+          { filename: '13.jpeg', title: 'Fury', series: 'Evolution Series #13', description: 'From the wreckage of light and shadow, a form emerges — burning, divine, uncontained. "Fury" is the hymn of transformation: the body as battlefield, the spirit as fire. Every drip bears witness to the war that never ends.', medium: 'Acrylic on paper', size: '6x9"', year: '2025', purchaseUrl: '' }
         ]
       },
       {
@@ -222,16 +224,16 @@ class DreamsMeowGallery {
         medium: 'Photography',
         colorCategory: 'green',
         images: [
-          { filename: 'photo_003.jpg', title: 'Forest Cathedral', description: 'Sunlight streaming through ancient forest canopy', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_004.jpg', title: 'Mountain Majesty', description: 'Majestic peaks touching the infinite sky', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_005.jpg', title: 'River\'s Journey', description: 'Water\'s eternal journey through landscape', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_043.jpg', title: 'Wildflower Meditation', description: 'Delicate wildflowers in morning meditation', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_044.jpg', title: 'Stone Wisdom', description: 'Ancient stones holding earth\'s wisdom', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_045.jpg', title: 'Cloud Dance', description: 'Clouds dancing across endless skies', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_046.jpg', title: 'Tree Spirit', description: 'The spiritual presence within old growth trees', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_047.jpg', title: 'Ocean\'s Breath', description: 'The rhythmic breathing of ocean waves', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_048.jpg', title: 'Desert Silence', description: 'The profound silence of desert landscapes', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_049.jpg', title: 'Sunset Reflection', description: 'Day\'s end reflected in still waters', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_003.jpg', title: 'I\'m the Captain Now', description: 'Rogue chicken commandeers a vessel on Ecuadorian waters', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_004.jpg', title: 'Here\'s Lookin\' at You', description: 'Primate gaze pierces through the Ecuadorian jungle canopy', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_005.jpg', title: 'Headshots', description: 'Wild portrait session with an Ecuadorian monkey who knew their angles', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_043.jpg', title: 'Dragonfly', description: 'Iridescent wings frozen mid-flight in Florida wetlands', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_044.jpg', title: 'Sunset Seagulls', description: 'Birds cut through molten sky above the Gulf of Mexico', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_045.jpg', title: 'Sunset Lake', description: 'Wisconsin waters mirror the burning horizon', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_046.jpg', title: 'Sunset Desert', description: 'Arizona\'s sky bleeds gold across endless sand', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_047.jpg', title: 'Lunar Eclipse', description: 'Two moments of cosmic shadow captured as the moon transforms', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_048.jpg', title: 'Lion', description: 'Captive king grants an audience through iron and glass', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_049.jpg', title: 'Sunset Lake II', description: 'Unknown waters hold the day\'s final light', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
           { filename: 'photo_050.jpg', title: 'Earth\'s Patterns', description: 'Natural patterns revealing earth\'s geometry', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
@@ -242,11 +244,11 @@ class DreamsMeowGallery {
         medium: 'Photography',
         colorCategory: 'yellow',
         images: [
-          { filename: 'photo_034.jpg', title: 'Light Spiral', description: 'Spiraling light creating cosmic patterns', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_008.jpg', title: 'Energy Flow', description: 'Energy flowing through space and time', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_009.jpg', title: 'Luminous Path', description: 'Path of light through darkness', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_020.jpg', title: 'Light Weaving', description: 'Weaving patterns of pure light', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_007.jpg', title: 'Celestial Dance', description: 'Light dancing like celestial bodies', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
+          { filename: 'photo_034.jpg', title: '5 Alarm Fire', description: 'Two sisters honor their firefighter husbands in this boudoir session, illuminated through layered light painting techniques that build heat from a single source.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_008.jpg', title: 'Ntnl Lampoons Wedding Vacation', description: 'Wedding chaos captured and transformed—multiple exposures painted with roaming light merge into one surreal celebration moment.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_009.jpg', title: 'The Gamer Life', description: 'A player, his feline companion, and his digital battlestation emerge from darkness through methodically sculpted light layers.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_020.jpg', title: 'Girls Bathroom Was Full', description: 'Las Vegas mischief frozen in time—playful moments carved from shadow using wandering light strokes across multiple frames.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_007.jpg', title: 'Just a Girl', description: 'Portrait stripped to essential elements, where controlled light traces reveal form through carefully orchestrated exposure blends.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -256,22 +258,21 @@ class DreamsMeowGallery {
         medium: 'Photography',
         colorCategory: 'blue',
         images: [
-          { filename: 'photo_042.jpg', title: 'Urban Geometry', description: 'Geometric patterns in urban architecture', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_029.jpg', title: 'Reflection Study', description: 'Studies in reflection and symmetry', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_035.jpg', title: 'Texture Exploration', description: 'Exploring textures in everyday objects', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_037.jpg', title: 'Minimal Composition', description: 'Minimalist approach to composition', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_038.jpg', title: 'Color Study', description: 'Studies in color and emotion', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_041.jpg', title: 'Abstract Reality', description: 'Finding abstraction in reality', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_022.jpg', title: 'Moment Captured', description: 'Capturing fleeting moments of beauty', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8360.JPG', title: 'Architectural Flow', description: 'Flowing lines in modern architecture', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8362.JPG', title: 'Light and Form', description: 'Interplay between light and architectural form', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8363.JPG', title: 'Structural Beauty', description: 'Finding beauty in structural elements', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8365.JPG', title: 'Shadow Studies', description: 'Exploring shadows in architectural photography', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8366.JPG', title: 'Contrast Play', description: 'Playing with contrasts in urban photography', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8367.JPG', title: 'Linear Perspective', description: 'Linear elements creating perspective', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8368.JPG', title: 'Rhythmic Elements', description: 'Rhythmic patterns in architectural details', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8369.JPG', title: 'Spatial Composition', description: 'Compositional studies of space and form', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'IMG_8370.JPG', title: 'Contemporary Vision', description: 'Contemporary architectural vision', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
+          { filename: 'photo_042.jpg', title: 'Election Day with the Obamas', description: 'Rare access moment—one of only two photographers permitted to capture the Obama family\'s intimate pre-announcement energy before his Illinois Senate run.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_029.jpg', title: 'Cold Hands, Warm Heart', description: 'Garter retrieval takes an unexpected turn when the groom\'s icy fingers send shivers through his unsuspecting bride.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_041.jpg', title: 'Barack and Carter', description: 'Power meets academia—Columbia College President Carter shares frame with future President Obama in this historic encounter.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_037.jpg', title: 'Victory Roll Dreams', description: 'Classic pin-up aesthetic revived—red lips, vintage curls, and that Rosie the Riveter confidence.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_038.jpg', title: 'Welcome Home, Soldier', description: 'Patriotic surprise captured in lace and anticipation for a boyfriend returning from deployment.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_022.jpg', title: 'Spine Study', description: 'The architecture of the human back becomes art in this celebration of feminine strength and grace.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8360.JPG', title: 'Pearls and Shoulders', description: 'A single strap descends—classic elegance meets subtle seduction in this intimate moment.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8362.JPG', title: 'Golden Hour Silhouette', description: 'Natural window light sculpts form as she glances back, caught between shadow and glow.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8363.JPG', title: 'Après-Ski Fantasy', description: 'Mountain passion meets bedroom eyes—honoring a love for powder days and cozy nights.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8365.JPG', title: 'Mississippi Crossing', description: 'Love spans state lines at the Iowa-Illinois bridge, the mighty river bearing witness below.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8366.JPG', title: 'Handful of Tulle', description: 'Groom\'s signature move meets wedding dress challenge—documenting his determined attempt through layers of fabric.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8367.JPG', title: 'Leading Man', description: 'She navigates, he follows—newlyweds dance through Chicago\'s financial district streets.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8368.JPG', title: 'Crimson and Concrete', description: 'Red statement jewelry pops against urban gray as newlyweds claim their corner of Chicago.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8369.JPG', title: 'Yellow Door Theory', description: 'Local legend says this vibrant portal brings fortune to lovers—young couple tests the superstition.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'IMG_8370.JPG', title: 'Hallway Halfpipe', description: 'No snow, no problem—sponsored boarder transforms hotel corridor into impromptu training ground.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       },
       {
@@ -281,15 +282,15 @@ class DreamsMeowGallery {
         medium: 'Photography',
         colorCategory: 'purple',
         images: [
-          { filename: 'photo_018.jpg', title: 'Inner Light', description: 'Exploring the light within', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_011.jpg', title: 'Shadow Self', description: 'Embracing the shadow aspects', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_013.jpg', title: 'Reflection', description: 'Deep self-reflection through imagery', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_014.jpg', title: 'Creative Spirit', description: 'The creative spirit in motion', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_015.jpg', title: 'Artistic Identity', description: 'Exploring artistic identity and expression', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_016.jpg', title: 'Inner Journey', description: 'Visual documentation of inner journey', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_017.jpg', title: 'Self Discovery', description: 'Moments of self-discovery and growth', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_051.jpg', title: 'Authentic Self', description: 'Revealing the authentic self', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
-          { filename: 'photo_010.jpg', title: 'Present Moment', description: 'Being fully present in the moment', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
+          { filename: 'photo_018.jpg', title: 'Aftermath', description: 'Self-portrait capturing emotional exhaustion—light traces the weight of unresolved conflict across multiple exposures, mapping the topology of a difficult day.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_011.jpg', title: 'Sacred Text', description: 'Reading becomes ritual in this self-portrait, where wandering light illuminates the pages that taught me to see through a lens.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_013.jpg', title: 'Looking Over My Shoulder', description: 'Hypervigilance made visible—light traces the constant surveillance of self-protection, each exposure mapping the exhausting habit of watching for threats that may never come.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_014.jpg', title: 'Social Burnout', description: 'The suffocating aftermath of human interaction visualized—light paintings trace the invisible pressure that builds from too much contact.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_015.jpg', title: 'Fetal Position', description: 'Body becomes shelter when the world grows too heavy—light curves around protective posture in this study of overwhelm.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_016.jpg', title: 'Liberation Day', description: 'Freedom tastes bittersweet—captured the day chains broke, light dances between relief and grief in carefully orchestrated layers.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_017.jpg', title: 'Rediscovery', description: 'The first breath of becoming myself again—light explores unfamiliar territory of a identity long buried under someone else\'s expectations.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_051.jpg', title: 'Hidden Light', description: 'A moment of quiet sadness. The shadows speak as loudly as the light, reflecting the parts of myself I often keep hidden. "Here\'s Me" in vulnerability, stillness and truth. My light paintings were created using a single light source with multiple photographs layered digitally and hand edited to perfection. Displayed at Grosse Point Gallery 2025', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' },
+          { filename: 'photo_010.jpg', title: 'Phoenix Hour', description: 'Rising from years of wreckage—each light layer builds upon the last, constructing a new self from the ashes of who I used to be.', size: 'Digital', year: '2024', purchaseUrl: 'https://snowmeow.square.site/' }
         ]
       }
     ];
@@ -302,8 +303,7 @@ class DreamsMeowGallery {
           ...image,
           projectId: project.id,
           projectTitle: project.title,
-          series: project.title,
-          medium: project.medium,
+          series: image.series || project.title,
           imageUrl: `/art-portfolio/${project.id}/${image.filename}`,
           colorCategory: project.colorCategory,
           purchaseUrl: image.purchaseUrl
@@ -315,59 +315,12 @@ class DreamsMeowGallery {
 
   // === HOME PAGE INITIALIZATION ===
   initializeHomePage() {
-    this.initializeHeroCanvas();
-    this.generatePreviewArtworks();
     this.setupAccordionDrawers();
     this.initializeContactForm();
+    // Render the gallery on the home page
+    this.renderGalleryOnHome();
   }
 
-  initializeHeroCanvas() {
-    this.heroCanvas = document.getElementById('hero-canvas');
-    if (!this.heroCanvas) return;
-
-    this.heroCtx = this.heroCanvas.getContext('2d');
-    this.animateHeroArtwork();
-  }
-
-  animateHeroArtwork() {
-    if (!this.heroCtx) return;
-
-    let hue = 0;
-    const animate = () => {
-      if (this.currentPage !== 'home') return;
-
-      // Clear canvas
-      this.heroCtx.clearRect(0, 0, 300, 300);
-
-      // Create animated gradient
-      const gradient = this.heroCtx.createRadialGradient(150, 150, 0, 150, 150, 150);
-      gradient.addColorStop(0, `hsl(${hue}, 80%, 60%)`);
-      gradient.addColorStop(0.5, `hsl(${(hue + 60) % 360}, 70%, 50%)`);
-      gradient.addColorStop(1, `hsl(${(hue + 120) % 360}, 60%, 40%)`);
-
-      this.heroCtx.fillStyle = gradient;
-      this.heroCtx.fillRect(0, 0, 300, 300);
-
-      // Add animated shapes
-      for (let i = 0; i < 8; i++) {
-        const time = Date.now() * 0.001;
-        const x = 150 + Math.cos(time + i * 0.8) * (50 + i * 10);
-        const y = 150 + Math.sin(time * 0.7 + i * 0.8) * (30 + i * 8);
-        const size = 20 + Math.sin(time * 2 + i) * 10;
-
-        this.heroCtx.beginPath();
-        this.heroCtx.arc(x, y, size, 0, Math.PI * 2);
-        this.heroCtx.fillStyle = `hsla(${(hue + i * 45) % 360}, 80%, 70%, 0.6)`;
-        this.heroCtx.fill();
-      }
-
-      hue += 0.5;
-      if (hue > 360) hue = 0;
-
-      requestAnimationFrame(animate);
-    };
-    animate();
-  }
 
   generatePreviewArtworks() {
     const sliderTrack = document.getElementById('slider-track');
@@ -673,11 +626,14 @@ class DreamsMeowGallery {
       return;
     }
 
+    // Add form-name for Netlify
+    formData.append('form-name', 'contact');
+
     // Show loading state
     this.setSubmitButtonState(submitBtn, 'loading');
 
     try {
-      // Simulate form submission (replace with actual implementation)
+      // Submit to Netlify Forms
       await this.submitContactForm(formData);
 
       // Show success state
@@ -699,20 +655,22 @@ class DreamsMeowGallery {
   }
 
   async submitContactForm(formData) {
-    // Simulate API call - replace with actual implementation
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // In a real implementation, you would send this to your backend
-        // or use a service like EmailJS, Formspree, or Netlify Forms
+    // Submit to Netlify Forms
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
 
-        // Simulate success (or failure for testing)
-        if (Math.random() > 0.1) { // 90% success rate
-          resolve({ success: true });
-        } else {
-          reject(new Error('Submission failed'));
-        }
-      }, 2000);
-    });
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      return { success: true };
+    } catch (error) {
+      throw error;
+    }
   }
 
   setSubmitButtonState(button, state) {
@@ -774,7 +732,6 @@ class DreamsMeowGallery {
     if (page === 'home') {
       homePage.style.display = 'block';
       galleryContainer.style.display = 'none';
-      this.animateHeroArtwork();
     } else if (page === 'gallery') {
       homePage.style.display = 'none';
       galleryContainer.style.display = 'block';
@@ -789,13 +746,33 @@ class DreamsMeowGallery {
       ? this.allImages
       : this.allImages.filter(img => img.projectId === this.currentFilter);
 
-    grid.innerHTML = '';
+    if (grid) {
+      grid.innerHTML = '';
 
-    filteredImages.forEach((image, index) => {
-      const artCard = this.createArtCard(image);
-      artCard.style.animationDelay = `${index * 0.1}s`;
-      grid.appendChild(artCard);
-    });
+      filteredImages.forEach((image, index) => {
+        const artCard = this.createArtCard(image);
+        artCard.style.animationDelay = `${index * 0.1}s`;
+        grid.appendChild(artCard);
+      });
+    }
+  }
+
+  // Render gallery on home page
+  renderGalleryOnHome() {
+    const grid = document.getElementById('gallery-grid-home');
+    const filteredImages = this.currentFilter === 'all'
+      ? this.allImages
+      : this.allImages.filter(img => img.projectId === this.currentFilter);
+
+    if (grid) {
+      grid.innerHTML = '';
+
+      filteredImages.forEach((image, index) => {
+        const artCard = this.createArtCard(image);
+        artCard.style.animationDelay = `${index * 0.1}s`;
+        grid.appendChild(artCard);
+      });
+    }
   }
 
   createArtCard(artwork) {
@@ -824,32 +801,7 @@ class DreamsMeowGallery {
     artInfo.innerHTML = `
       <h3 class="art-title">${artwork.title}</h3>
       <p class="art-description">${artwork.description}</p>
-      <div class="art-metadata">
-        <div class="metadata-row">
-          <span class="metadata-label">Series:</span>
-          <span class="metadata-value">${artwork.series}</span>
-        </div>
-        <div class="metadata-row">
-          <span class="metadata-label">Medium:</span>
-          <span class="metadata-value">${artwork.medium}</span>
-        </div>
-        <div class="metadata-row">
-          <span class="metadata-label">Size:</span>
-          <span class="metadata-value">${artwork.size}</span>
-        </div>
-        <div class="metadata-row">
-          <span class="metadata-label">Year:</span>
-          <span class="metadata-value">${artwork.year}</span>
-        </div>
-      </div>
-      ${artwork.purchaseUrl ? `
-        <div class="art-actions">
-          <button class="purchase-btn" data-url="${artwork.purchaseUrl}">
-            <span class="btn-text">Purchase</span>
-            <span class="btn-icon">🛒</span>
-          </button>
-        </div>
-      ` : ''}
+      <p class="art-credit">created by: SnowKittenMeow</p>
     `;
 
     card.appendChild(imageContainer);
@@ -882,16 +834,6 @@ class DreamsMeowGallery {
       card.style.setProperty('--x', `${x}%`);
       card.style.setProperty('--y', `${y}%`);
     });
-
-    // Handle purchase button click
-    const purchaseBtn = card.querySelector('.purchase-btn');
-    if (purchaseBtn) {
-      purchaseBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent opening immersive view
-        const url = purchaseBtn.getAttribute('data-url');
-        window.open(url, '_blank', 'noopener,noreferrer');
-      });
-    }
 
     // Click to open immersive view
     card.addEventListener('click', () => this.openImmersiveView(artwork));
@@ -931,32 +873,34 @@ class DreamsMeowGallery {
         <div class="slideshow-info">
           <h2 class="slideshow-title">${artwork.title}</h2>
           <p class="slideshow-description">${artwork.description}</p>
-          <div class="slideshow-metadata">
-            <div class="metadata-row">
-              <span class="metadata-label">Series:</span>
-              <span class="metadata-value">${artwork.series}</span>
+          ${artwork.projectId === 'evolution-project' ? `
+            <div class="slideshow-metadata">
+              <div class="metadata-row">
+                <span class="metadata-label">Series:</span>
+                <span class="metadata-value">${artwork.series}</span>
+              </div>
+              <div class="metadata-row">
+                <span class="metadata-label">Medium:</span>
+                <span class="metadata-value">${artwork.medium}</span>
+              </div>
+              <div class="metadata-row">
+                <span class="metadata-label">Size:</span>
+                <span class="metadata-value">${artwork.size}</span>
+              </div>
+              <div class="metadata-row">
+                <span class="metadata-label">Year:</span>
+                <span class="metadata-value">${artwork.year}</span>
+              </div>
             </div>
-            <div class="metadata-row">
-              <span class="metadata-label">Medium:</span>
-              <span class="metadata-value">${artwork.medium}</span>
-            </div>
-            <div class="metadata-row">
-              <span class="metadata-label">Size:</span>
-              <span class="metadata-value">${artwork.size}</span>
-            </div>
-            <div class="metadata-row">
-              <span class="metadata-label">Year:</span>
-              <span class="metadata-value">${artwork.year}</span>
-            </div>
-          </div>
+          ` : ''}
           <div class="slideshow-counter">
             <span>${currentImageIndex + 1} of ${slideshowImages.length}</span>
           </div>
-          ${artwork.purchaseUrl ? `
+          ${artwork.purchaseUrl && !['nature', 'light-paintings', 'photography', 'me'].includes(artwork.projectId) ? `
             <div class="slideshow-actions">
-              <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl}">
-                <span class="btn-text">Purchase This Artwork</span>
-                <span class="btn-icon">🛒</span>
+              <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl}" data-project="${artwork.projectId}">
+                <span class="btn-text">${artwork.projectId === 'evolution-project' ? 'Purchase Print' : 'Contact Me for Availability'}</span>
+                <span class="btn-icon">${artwork.projectId === 'evolution-project' ? '🛒' : '✉️'}</span>
                 <span class="btn-glow"></span>
               </button>
             </div>
@@ -976,8 +920,17 @@ class DreamsMeowGallery {
     const slideshowPurchaseBtn = artworkContainer.querySelector('.slideshow-purchase-btn');
     if (slideshowPurchaseBtn) {
       slideshowPurchaseBtn.addEventListener('click', () => {
-        const url = slideshowPurchaseBtn.getAttribute('data-url');
-        window.open(url, '_blank', 'noopener,noreferrer');
+        const projectId = slideshowPurchaseBtn.getAttribute('data-project');
+        if (projectId === 'evolution-project') {
+          const url = slideshowPurchaseBtn.getAttribute('data-url');
+          window.open(url, '_blank', 'noopener,noreferrer');
+        } else {
+          // Close modal and scroll to contact section
+          this.closeImmersiveView();
+          document.querySelector('.contact-section').scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
       });
     }
 
@@ -1058,25 +1011,32 @@ class DreamsMeowGallery {
     if (description) description.textContent = artwork.description;
     if (counter) counter.textContent = `${index + 1} of ${this.projectImages.length}`;
 
+    // Update or remove metadata based on project
     if (metadata) {
-      metadata.innerHTML = `
-        <div class="metadata-row">
-          <span class="metadata-label">Series:</span>
-          <span class="metadata-value">${artwork.series}</span>
-        </div>
-        <div class="metadata-row">
-          <span class="metadata-label">Medium:</span>
-          <span class="metadata-value">${artwork.medium}</span>
-        </div>
-        <div class="metadata-row">
-          <span class="metadata-label">Size:</span>
-          <span class="metadata-value">${artwork.size}</span>
-        </div>
-        <div class="metadata-row">
-          <span class="metadata-label">Year:</span>
-          <span class="metadata-value">${artwork.year}</span>
-        </div>
-      `;
+      if (artwork.projectId === 'evolution-project') {
+        metadata.innerHTML = `
+          <div class="metadata-row">
+            <span class="metadata-label">Series:</span>
+            <span class="metadata-value">${artwork.series}</span>
+          </div>
+          <div class="metadata-row">
+            <span class="metadata-label">Medium:</span>
+            <span class="metadata-value">${artwork.medium}</span>
+          </div>
+          <div class="metadata-row">
+            <span class="metadata-label">Size:</span>
+            <span class="metadata-value">${artwork.size}</span>
+          </div>
+          <div class="metadata-row">
+            <span class="metadata-label">Year:</span>
+            <span class="metadata-value">${artwork.year}</span>
+          </div>
+        `;
+        metadata.style.display = 'block';
+      } else {
+        metadata.innerHTML = '';
+        metadata.style.display = 'none';
+      }
     }
 
     // Update purchase button
@@ -1085,13 +1045,14 @@ class DreamsMeowGallery {
       actionsContainer.remove();
     }
 
-    if (artwork.purchaseUrl) {
+    // Only show button for certain projects
+    if (artwork.purchaseUrl && !['nature', 'light-paintings', 'photography', 'me'].includes(artwork.projectId)) {
       actionsContainer = document.createElement('div');
       actionsContainer.className = 'slideshow-actions';
       actionsContainer.innerHTML = `
-        <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl}">
-          <span class="btn-text">Purchase This Artwork</span>
-          <span class="btn-icon">🛒</span>
+        <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl}" data-project="${artwork.projectId}">
+          <span class="btn-text">${artwork.projectId === 'evolution-project' ? 'Purchase Print' : 'Contact Me for Availability'}</span>
+          <span class="btn-icon">${artwork.projectId === 'evolution-project' ? '🛒' : '✉️'}</span>
           <span class="btn-glow"></span>
         </button>
       `;
@@ -1100,7 +1061,15 @@ class DreamsMeowGallery {
       // Add event listener to new button
       const purchaseBtn = actionsContainer.querySelector('.slideshow-purchase-btn');
       purchaseBtn.addEventListener('click', () => {
-        window.open(artwork.purchaseUrl, '_blank', 'noopener,noreferrer');
+        if (artwork.projectId === 'evolution-project') {
+          window.open(artwork.purchaseUrl, '_blank', 'noopener,noreferrer');
+        } else {
+          // Close modal and scroll to contact section
+          this.closeImmersiveView();
+          document.querySelector('.contact-section').scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
       });
     }
   }
@@ -1109,6 +1078,60 @@ class DreamsMeowGallery {
     const modal = document.getElementById('immersive-modal');
     modal.classList.remove('active');
     document.body.style.overflow = '';
+  }
+
+  // === FIXED NAVIGATION ===
+  initializeFixedNav() {
+    const fixedNav = document.getElementById('fixed-nav');
+    const scrollThreshold = 300; // Show nav after scrolling 300px
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Show nav when scrolling down past threshold
+      if (scrollTop > scrollThreshold) {
+        fixedNav.classList.add('visible');
+      } else {
+        fixedNav.classList.remove('visible');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navLinks = document.getElementById('fixed-nav-links');
+
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      const links = document.querySelectorAll('.fixed-nav-link');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+
+    // Handle smooth scrolling for internal links
+    const scrollLinks = document.querySelectorAll('.fixed-nav-link[data-scroll]');
+    scrollLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetClass = link.getAttribute('data-scroll');
+        const targetSection = document.querySelector(`.${targetClass}`);
+
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
   }
 
   // === EVENT LISTENERS ===
@@ -1121,14 +1144,22 @@ class DreamsMeowGallery {
     const homeBtn = document.getElementById('home-btn');
 
     if (enterGalleryBtn) {
-      enterGalleryBtn.addEventListener('click', () => this.showPage('gallery'));
+      enterGalleryBtn.addEventListener('click', () => {
+        document.querySelector('.gallery-section').scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
     }
     if (viewGalleryBtn) {
-      viewGalleryBtn.addEventListener('click', () => this.showPage('gallery'));
+      viewGalleryBtn.addEventListener('click', () => {
+        document.querySelector('.gallery-section').scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
     }
     if (learnMoreBtn) {
       learnMoreBtn.addEventListener('click', () => {
-        document.querySelector('.features-section').scrollIntoView({
+        document.querySelector('.about-section').scrollIntoView({
           behavior: 'smooth'
         });
       });
@@ -1169,7 +1200,13 @@ class DreamsMeowGallery {
         btn.classList.add('active');
         this.currentFilter = btn.dataset.project;
         this.updateTheme(btn.dataset.hue);
-        this.renderGallery();
+
+        // If on home page, render on home gallery; otherwise render on gallery page
+        if (this.currentPage === 'home') {
+          this.renderGalleryOnHome();
+        } else {
+          this.renderGallery();
+        }
       });
     });
 
