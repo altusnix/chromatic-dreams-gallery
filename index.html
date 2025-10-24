@@ -20,6 +20,21 @@
     </script>
   </head>
   <body>
+    <!-- Hidden form for Netlify detection (do not remove) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="subject">
+        <option value="purchase">Artwork Purchase</option>
+        <option value="collaboration">Artistic Collaboration</option>
+        <option value="exhibition">Exhibition Opportunity</option>
+        <option value="general">General Inquiry</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
     <div id="app">
       <!-- Animated Background Canvas -->
       <canvas id="background-canvas" class="background-canvas"></canvas>
