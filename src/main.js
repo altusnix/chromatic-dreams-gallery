@@ -524,6 +524,8 @@ class DreamsMeowGallery {
 
   validateField(field) {
     const formGroup = field.closest('.form-group');
+    if (!formGroup) return true; // Skip validation for hidden fields
+
     const fieldName = field.name;
     const fieldValue = field.value.trim();
 
@@ -587,6 +589,8 @@ class DreamsMeowGallery {
 
   showFieldError(field, message) {
     const formGroup = field.closest('.form-group');
+    if (!formGroup) return; // Skip if field is not in a form-group
+
     let errorElement = formGroup.querySelector('.error-message');
 
     if (!errorElement) {
@@ -600,6 +604,8 @@ class DreamsMeowGallery {
 
   clearFieldError(field) {
     const formGroup = field.closest('.form-group');
+    if (!formGroup) return; // Skip if field is not in a form-group (e.g., hidden fields)
+
     const errorElement = formGroup.querySelector('.error-message');
 
     if (errorElement) {
@@ -1232,6 +1238,9 @@ class DreamsMeowGallery {
 
     // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
+      // Don't trigger shortcuts when typing in form fields
+      const isTyping = e.target.matches('input, textarea, select');
+
       if (e.key === 'Escape') {
         if (this.currentPage === 'gallery') {
           this.closeImmersiveView();
@@ -1239,33 +1248,37 @@ class DreamsMeowGallery {
           this.showPage('home');
         }
       }
-      if (e.key === ' ') {
-        e.preventDefault();
-        if (this.currentPage === 'gallery') {
-          this.shuffleGallery();
+
+      // Only allow these shortcuts when not typing in forms
+      if (!isTyping) {
+        if (e.key === ' ') {
+          e.preventDefault();
+          if (this.currentPage === 'gallery') {
+            this.shuffleGallery();
+          }
         }
-      }
-      // Slideshow navigation
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        if (document.getElementById('immersive-modal').classList.contains('active')) {
-          this.previousSlide();
+        // Slideshow navigation
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          if (document.getElementById('immersive-modal').classList.contains('active')) {
+            this.previousSlide();
+          }
         }
-      }
-      if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        if (document.getElementById('immersive-modal').classList.contains('active')) {
-          this.nextSlide();
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          if (document.getElementById('immersive-modal').classList.contains('active')) {
+            this.nextSlide();
+          }
         }
-      }
-      if (e.key === 'f') this.toggleFullscreen();
-      if (e.key === 'h') this.showPage('home');
-      if (e.key === 'g') this.showPage('gallery');
-      if (e.key === 'c' && !e.target.matches('input, textarea, select') && !('ontouchstart' in window)) {
-        if (this.currentPage === 'home') {
-          document.querySelector('.contact-section').scrollIntoView({
-            behavior: 'smooth'
-          });
+        if (e.key === 'f') this.toggleFullscreen();
+        if (e.key === 'h') this.showPage('home');
+        if (e.key === 'g') this.showPage('gallery');
+        if (e.key === 'c' && !('ontouchstart' in window)) {
+          if (this.currentPage === 'home') {
+            document.querySelector('.contact-section').scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
         }
       }
     });
