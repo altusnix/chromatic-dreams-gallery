@@ -913,11 +913,11 @@ class DreamsMeowGallery {
           <div class="slideshow-counter">
             <span>${currentImageIndex + 1} of ${slideshowImages.length}</span>
           </div>
-          ${artwork.purchaseUrl && !['nature', 'light-paintings', 'photography', 'me'].includes(artwork.projectId) ? `
+          ${(artwork.purchaseUrl && !['nature', 'light-paintings', 'photography', 'me'].includes(artwork.projectId)) || (artwork.projectId === 'evolution-project' && !artwork.purchaseUrl) ? `
             <div class="slideshow-actions">
-              <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl}" data-project="${artwork.projectId}">
-                <span class="btn-text">${artwork.projectId === 'evolution-project' ? 'Purchase Print' : 'Contact Me for Availability'}</span>
-                <span class="btn-icon">${artwork.projectId === 'evolution-project' ? '🛒' : '✉️'}</span>
+              <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl || ''}" data-project="${artwork.projectId}">
+                <span class="btn-text">${artwork.projectId === 'evolution-project' && artwork.purchaseUrl ? 'Purchase Print' : artwork.projectId === 'evolution-project' && !artwork.purchaseUrl ? 'Contact Me When Available' : 'Contact Me for Availability'}</span>
+                <span class="btn-icon">${artwork.projectId === 'evolution-project' && artwork.purchaseUrl ? '🛒' : '✉️'}</span>
                 <span class="btn-glow"></span>
               </button>
             </div>
@@ -938,8 +938,8 @@ class DreamsMeowGallery {
     if (slideshowPurchaseBtn) {
       slideshowPurchaseBtn.addEventListener('click', () => {
         const projectId = slideshowPurchaseBtn.getAttribute('data-project');
-        if (projectId === 'evolution-project') {
-          const url = slideshowPurchaseBtn.getAttribute('data-url');
+        const url = slideshowPurchaseBtn.getAttribute('data-url');
+        if (projectId === 'evolution-project' && url) {
           window.open(url, '_blank', 'noopener,noreferrer');
         } else {
           // Close modal and scroll to contact section
@@ -1078,14 +1078,14 @@ class DreamsMeowGallery {
       actionsContainer.remove();
     }
 
-    // Only show button for certain projects
-    if (artwork.purchaseUrl && !['nature', 'light-paintings', 'photography', 'me'].includes(artwork.projectId)) {
+    // Show button if has purchaseUrl (and not excluded) OR is evolution-project without purchaseUrl
+    if ((artwork.purchaseUrl && !['nature', 'light-paintings', 'photography', 'me'].includes(artwork.projectId)) || (artwork.projectId === 'evolution-project' && !artwork.purchaseUrl)) {
       actionsContainer = document.createElement('div');
       actionsContainer.className = 'slideshow-actions';
       actionsContainer.innerHTML = `
-        <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl}" data-project="${artwork.projectId}">
-          <span class="btn-text">${artwork.projectId === 'evolution-project' ? 'Purchase Print' : 'Contact Me for Availability'}</span>
-          <span class="btn-icon">${artwork.projectId === 'evolution-project' ? '🛒' : '✉️'}</span>
+        <button class="slideshow-purchase-btn" data-url="${artwork.purchaseUrl || ''}" data-project="${artwork.projectId}">
+          <span class="btn-text">${artwork.projectId === 'evolution-project' && artwork.purchaseUrl ? 'Purchase Print' : artwork.projectId === 'evolution-project' && !artwork.purchaseUrl ? 'Contact Me When Available' : 'Contact Me for Availability'}</span>
+          <span class="btn-icon">${artwork.projectId === 'evolution-project' && artwork.purchaseUrl ? '🛒' : '✉️'}</span>
           <span class="btn-glow"></span>
         </button>
       `;
@@ -1094,7 +1094,7 @@ class DreamsMeowGallery {
       // Add event listener to new button
       const purchaseBtn = actionsContainer.querySelector('.slideshow-purchase-btn');
       purchaseBtn.addEventListener('click', () => {
-        if (artwork.projectId === 'evolution-project') {
+        if (artwork.projectId === 'evolution-project' && artwork.purchaseUrl) {
           window.open(artwork.purchaseUrl, '_blank', 'noopener,noreferrer');
         } else {
           // Close modal and scroll to contact section
